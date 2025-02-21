@@ -27,8 +27,8 @@ export default function Header2() {
                     </Link>
                   </div>
                 </div>
-                <div className="nav-outer flex align-center">
-                  {/* Main Menu */}
+                {/* <div className="nav-outer flex align-center">
+                  
                   <nav className="main-menu show navbar-expand-md">
                     <div
                       className="navbar-collapse collapse clearfix"
@@ -39,44 +39,11 @@ export default function Header2() {
                       </ul>
                     </div>
                   </nav>
-                  {/* Main Menu End*/}
-                </div>
+                 
+                </div> */}
                 <div className="header-account flex align-center">
-                  <div className="search-mobie">
-                    <a
-                      onClick={() => {
-                        document
-                          .querySelector(".header-search-icon")
-                          .classList.toggle("opened");
-                        document
-                          .querySelector(".wd-find-select")
-                          .classList.toggle("opened");
-                      }}
-                      className="header-search-icon flex items-center justify-center"
-                    >
-                      <i className="icon-autodeal-search search-icon fs-20" />
-                      <i className="icon-autodeal-plus search-icon fs-20" />
-                    </a>
-                    <div className="wd-find-select">
-                      <form onSubmit={(e) => e.preventDefault()}>
-                        <div className="form-group-1 search-form form-style2 relative">
-                          <i className="icon-autodeal-search" />
-                          <input
-                            type="search"
-                            className="search-field"
-                            id="search-terms"
-                            placeholder="Search..."
-                            defaultValue=""
-                            name="s"
-                            title="Search for"
-                            required
-                          />
-                        </div>
-                      </form>
-                    </div>
-                  </div>
                   <a
-                    href="#"
+                    href="/my-favorite"
                     className="header-favorite flex items-center justify-center"
                   >
                     <i className="icon-autodeal-favorite fs-18" />
@@ -89,8 +56,8 @@ export default function Header2() {
                       <li className="">
                         <a
                           href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#popup_bid"
+                          // data-bs-toggle="modal"
+                          // data-bs-target="#popup_bid"
                         >
                           Login
                         </a>
@@ -101,15 +68,15 @@ export default function Header2() {
                       <li className="">
                         <a
                           href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#popup_bid2"
+                          // data-bs-toggle="modal"
+                          // data-bs-target="#popup_bid2"
                         >
                           Register
                         </a>
                       </li>
                     </ul>
                   </div>
-                  <div className="flat-bt-top">
+                  {/* <div className="flat-bt-top">
                     <Link className="sc-button" to={`/add-listing`}>
                       <svg
                         width={21}
@@ -145,7 +112,7 @@ export default function Header2() {
                       </svg>
                       <span>Add listing</span>
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
                 <div
                   className="mobile-nav-toggler mobile-button"

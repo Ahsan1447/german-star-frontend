@@ -1,7 +1,6 @@
 import MyFavourite from "@/components/dashboard/MyFavourite";
-import Sidebar from "@/components/dashboard/Sidebar";
-import Header4 from "@/components/headers/Header4";
 import React from "react";
+import Header2 from "@/components/headers/Header2";
 
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
@@ -13,13 +12,12 @@ export default function MyFavoritePage() {
   return (
     <>
       <MetaComponent meta={metadata} />
-      <Sidebar />
+      {/* <Sidebar /> */}
+      <div className="header-fixed">
+        <Header2 />
+      </div>
       <div id="wrapper-dashboard">
-        <div id="pagee" className="clearfix">
-          <Header4 />
-        </div>
         <div id="themesflat-content"></div>
-        <div className="dashboard-toggle">Show DashBoard</div>
         <MyFavourite />
       </div>
     </>

@@ -302,7 +302,7 @@ export default function Footer1() {
             </div>
           </div>
         </div>
-        <div className="footer-main">
+        {/* <div className="footer-main">
           <div className="row">
             {footerData.map((column, index) => (
               <div className="col-lg-3 col-sm-6 col-12" key={index}>
@@ -378,7 +378,7 @@ export default function Footer1() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="footer-bottom">
           <div className="row">
             <div className="col-lg-4 col-md-12">

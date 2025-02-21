@@ -14,6 +14,7 @@ import LoanCalculator from "@/components/homes/home-1/LoanCalculator";
 import Process from "@/components/homes/home-1/Process";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import Cars1 from "@/components/carsListings/Cars1";
 const metadata = {
   title: "Home 01 || AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
   description: "AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
@@ -26,17 +27,17 @@ export default function HomePage1() {
         <Header1 />
       </div>
       <Hero />
-      <Filter />
-      <Cars />
-      <Categories />
-      <LoanCalculator />
-      <Process />
-      <Cars2 />
-      <Banner />
-      <CarBrands />
-      <CarReview />
-      <Blogs />
-      <Brands />
+      {/* <Filter /> */}
+      <Cars1 />
+      {/* <Categories /> */}
+      {/* <LoanCalculator /> */}
+      {/* <Process /> */}
+      {/* <Cars2 /> */}
+      {/* <Banner /> */}
+      {/* <CarBrands /> */}
+      {/* <CarReview /> */}
+      {/* <Blogs /> */}
+      {/* <Brands /> */}
       <Footer1 />
     </>
   );

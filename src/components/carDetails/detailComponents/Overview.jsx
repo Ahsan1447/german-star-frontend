@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Overview() {
+export default function Overview({ carItem }) {
   return (
     <div className="tfcl-listing-info tf-collapse-content mt-30">
       <div className="row">
@@ -44,29 +44,7 @@ export default function Overview() {
             </div>
             <div className="content-listing-info">
               <span className="listing-info-title">Cylinders:</span>
-              <p className="listing-info-value">6</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-6 col-md-6 item">
-          <div className="inner listing-infor-box">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={20}
-                height={20}
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M18.75 14.9998H18.125V7.70836C18.125 7.50265 18.0742 7.30011 17.9772 7.11872C17.8802 6.93733 17.7399 6.78269 17.5688 6.66852L10.6938 2.08493C10.4884 1.94804 10.2472 1.875 10.0004 1.875C9.75362 1.875 9.51236 1.94804 9.30703 2.08493L2.43203 6.66852C2.26076 6.7826 2.12031 6.9372 2.02314 7.1186C1.92597 7.3 1.87508 7.50258 1.875 7.70836V14.9998H1.25C1.08424 14.9998 0.925268 15.0656 0.808058 15.1828C0.690848 15.3 0.625 15.459 0.625 15.6248C0.625 15.7905 0.690848 15.9495 0.808058 16.0667C0.925268 16.1839 1.08424 16.2498 1.25 16.2498H18.75C18.9158 16.2498 19.0747 16.1839 19.1919 16.0667C19.3092 15.9495 19.375 15.7905 19.375 15.6248C19.375 15.459 19.3092 15.3 19.1919 15.1828C19.0747 15.0656 18.9158 14.9998 18.75 14.9998ZM3.125 7.70836L10 3.12477L16.875 7.70758V14.9998H15V10.6248C15 10.459 14.9342 10.3 14.8169 10.1828C14.6997 10.0656 14.5408 9.99977 14.375 9.99977H5.625C5.45924 9.99977 5.30027 10.0656 5.18306 10.1828C5.06585 10.3 5 10.459 5 10.6248V14.9998H3.125V7.70836ZM13.75 11.2498V12.4998H10.625V11.2498H13.75ZM9.375 12.4998H6.25V11.2498H9.375V12.4998ZM6.25 13.7498H9.375V14.9998H6.25V13.7498ZM10.625 13.7498H13.75V14.9998H10.625V13.7498Z"
-                  fill="#B6B6B6"
-                />
-              </svg>
-            </div>
-            <div className="content-listing-info">
-              <span className="listing-info-title">Stock Number:</span>
-              <p className="listing-info-value">AB9084329457</p>
+              <p className="listing-info-value">{carItem.vehicleDetail.details.cylinders}</p>
             </div>
           </div>
         </div>
@@ -88,7 +66,7 @@ export default function Overview() {
             </div>
             <div className="content-listing-info">
               <span className="listing-info-title">Fuel Type:</span>
-              <p className="listing-info-value">Petrol</p>
+              <p className="listing-info-value">{carItem.vehicleDetail.details.fuel_type}</p>
             </div>
           </div>
         </div>
@@ -110,7 +88,7 @@ export default function Overview() {
             </div>
             <div className="content-listing-info">
               <span className="listing-info-title">VIN Number:</span>
-              <p className="listing-info-value">39847059856</p>
+              <p className="listing-info-value">{carItem.vin}</p>
             </div>
           </div>
         </div>
@@ -131,8 +109,8 @@ export default function Overview() {
               </svg>
             </div>
             <div className="content-listing-info">
-              <span className="listing-info-title">Doors:</span>
-              <p className="listing-info-value">4</p>
+              <span className="listing-info-title">Drivetrain:</span>
+              <p className="listing-info-value">{carItem.vehicleDetail.details.drivetrain}</p>
             </div>
           </div>
         </div>
@@ -154,7 +132,7 @@ export default function Overview() {
             </div>
             <div className="content-listing-info">
               <span className="listing-info-title">Year:</span>
-              <p className="listing-info-value">2024</p>
+              <p className="listing-info-value">{carItem.year}</p>
             </div>
           </div>
         </div>
@@ -176,32 +154,11 @@ export default function Overview() {
             </div>
             <div className="content-listing-info">
               <span className="listing-info-title">Color:</span>
-              <p className="listing-info-value">Blue,Gray</p>
+              <p className="listing-info-value">{carItem.color}</p>
             </div>
           </div>
         </div>
-        <div className="col-xl-6 col-md-6 item">
-          <div className="inner listing-infor-box">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={20}
-                height={20}
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M17.5 18.1252C17.5 18.2909 17.4341 18.4499 17.3169 18.5671C17.1997 18.6843 17.0407 18.7502 16.875 18.7502H8.74998C8.58422 18.7502 8.42525 18.6843 8.30804 18.5671C8.19083 18.4499 8.12498 18.2909 8.12498 18.1252C8.12498 17.9594 8.19083 17.8004 8.30804 17.6832C8.42525 17.566 8.58422 17.5002 8.74998 17.5002H16.875C17.0407 17.5002 17.1997 17.566 17.3169 17.6832C17.4341 17.8004 17.5 17.9594 17.5 18.1252ZM17.5 12.5002V15.0002C17.5 15.3317 17.3683 15.6496 17.1339 15.884C16.8994 16.1185 16.5815 16.2502 16.25 16.2502H8.91482C8.68238 16.2509 8.45439 16.1865 8.25666 16.0643C8.05893 15.9421 7.89938 15.767 7.79607 15.5588L3.25623 6.49626C3.16991 6.32242 3.125 6.13097 3.125 5.93688C3.125 5.7428 3.16991 5.55134 3.25623 5.37751L4.98435 1.94001C5.13103 1.64729 5.38671 1.4238 5.69642 1.31759C6.00613 1.21139 6.34515 1.23093 6.6406 1.37204L9.27263 2.48298L9.30935 2.50016C9.60567 2.6485 9.83097 2.90843 9.93571 3.22281C10.0405 3.5372 10.0161 3.88031 9.86795 4.17673C9.86555 4.18268 9.86268 4.18843 9.85935 4.19391L8.74998 6.25016L11.2328 11.2502H16.25C16.5815 11.2502 16.8994 11.3819 17.1339 11.6163C17.3683 11.8507 17.5 12.1686 17.5 12.5002ZM16.25 12.5002H11.232C10.9997 12.5009 10.7718 12.4365 10.5741 12.3143C10.3765 12.1921 10.2171 12.017 10.114 11.8088L7.63045 6.80876C7.54434 6.63528 7.49953 6.44423 7.49953 6.25055C7.49953 6.05688 7.54434 5.86583 7.63045 5.69235L7.63982 5.67516L8.74998 3.61891L6.13826 2.51657C6.12574 2.51176 6.11348 2.50628 6.10154 2.50016L4.37498 5.93766L8.91404 15.0002H16.25V12.5002Z"
-                  fill="#B6B6B6"
-                />
-              </svg>
-            </div>
-            <div className="content-listing-info">
-              <span className="listing-info-title">Seats:</span>
-              <p className="listing-info-value">7</p>
-            </div>
-          </div>
-        </div>
+
         <div className="col-xl-6 col-md-6 item">
           <div className="inner listing-infor-box">
             <div className="icon">
@@ -220,29 +177,7 @@ export default function Overview() {
             </div>
             <div className="content-listing-info">
               <span className="listing-info-title">Transmission:</span>
-              <p className="listing-info-value">Auto</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-6 col-md-6 item">
-          <div className="inner listing-infor-box">
-            <div className="icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={20}
-                height={20}
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M18.75 16.25H18.125V6.875C18.125 6.70924 18.0592 6.55027 17.9419 6.43306C17.8247 6.31585 17.6658 6.25 17.5 6.25H12.5C12.3342 6.25 12.1753 6.31585 12.0581 6.43306C11.9408 6.55027 11.875 6.70924 11.875 6.875V10H8.125V3.125C8.125 2.95924 8.05915 2.80027 7.94194 2.68306C7.82473 2.56585 7.66576 2.5 7.5 2.5H2.5C2.33424 2.5 2.17527 2.56585 2.05806 2.68306C1.94085 2.80027 1.875 2.95924 1.875 3.125V16.25H1.25C1.08424 16.25 0.925268 16.3158 0.808058 16.4331C0.690848 16.5503 0.625 16.7092 0.625 16.875C0.625 17.0408 0.690848 17.1997 0.808058 17.3169C0.925268 17.4342 1.08424 17.5 1.25 17.5H18.75C18.9158 17.5 19.0747 17.4342 19.1919 17.3169C19.3092 17.1997 19.375 17.0408 19.375 16.875C19.375 16.7092 19.3092 16.5503 19.1919 16.4331C19.0747 16.3158 18.9158 16.25 18.75 16.25ZM13.125 7.5H16.875V16.25H13.125V7.5ZM11.875 11.25V16.25H8.125V11.25H11.875ZM3.125 3.75H6.875V16.25H3.125V3.75ZM5.625 5.625V6.875C5.625 7.04076 5.55915 7.19973 5.44194 7.31694C5.32473 7.43415 5.16576 7.5 5 7.5C4.83424 7.5 4.67527 7.43415 4.55806 7.31694C4.44085 7.19973 4.375 7.04076 4.375 6.875V5.625C4.375 5.45924 4.44085 5.30027 4.55806 5.18306C4.67527 5.06585 4.83424 5 5 5C5.16576 5 5.32473 5.06585 5.44194 5.18306C5.55915 5.30027 5.625 5.45924 5.625 5.625ZM5.625 9.375V10.625C5.625 10.7908 5.55915 10.9497 5.44194 11.0669C5.32473 11.1842 5.16576 11.25 5 11.25C4.83424 11.25 4.67527 11.1842 4.55806 11.0669C4.44085 10.9497 4.375 10.7908 4.375 10.625V9.375C4.375 9.20924 4.44085 9.05027 4.55806 8.93306C4.67527 8.81585 4.83424 8.75 5 8.75C5.16576 8.75 5.32473 8.81585 5.44194 8.93306C5.55915 9.05027 5.625 9.20924 5.625 9.375ZM5.625 13.125V14.375C5.625 14.5408 5.55915 14.6997 5.44194 14.8169C5.32473 14.9342 5.16576 15 5 15C4.83424 15 4.67527 14.9342 4.55806 14.8169C4.44085 14.6997 4.375 14.5408 4.375 14.375V13.125C4.375 12.9592 4.44085 12.8003 4.55806 12.6831C4.67527 12.5658 4.83424 12.5 5 12.5C5.16576 12.5 5.32473 12.5658 5.44194 12.6831C5.55915 12.8003 5.625 12.9592 5.625 13.125ZM9.375 14.375V13.125C9.375 12.9592 9.44085 12.8003 9.55806 12.6831C9.67527 12.5658 9.83424 12.5 10 12.5C10.1658 12.5 10.3247 12.5658 10.4419 12.6831C10.5592 12.8003 10.625 12.9592 10.625 13.125V14.375C10.625 14.5408 10.5592 14.6997 10.4419 14.8169C10.3247 14.9342 10.1658 15 10 15C9.83424 15 9.67527 14.9342 9.55806 14.8169C9.44085 14.6997 9.375 14.5408 9.375 14.375ZM14.375 14.375V13.125C14.375 12.9592 14.4408 12.8003 14.5581 12.6831C14.6753 12.5658 14.8342 12.5 15 12.5C15.1658 12.5 15.3247 12.5658 15.4419 12.6831C15.5592 12.8003 15.625 12.9592 15.625 13.125V14.375C15.625 14.5408 15.5592 14.6997 15.4419 14.8169C15.3247 14.9342 15.1658 15 15 15C14.8342 15 14.6753 14.9342 14.5581 14.8169C14.4408 14.6997 14.375 14.5408 14.375 14.375ZM14.375 10.625V9.375C14.375 9.20924 14.4408 9.05027 14.5581 8.93306C14.6753 8.81585 14.8342 8.75 15 8.75C15.1658 8.75 15.3247 8.81585 15.4419 8.93306C15.5592 9.05027 15.625 9.20924 15.625 9.375V10.625C15.625 10.7908 15.5592 10.9497 15.4419 11.0669C15.3247 11.1842 15.1658 11.25 15 11.25C14.8342 11.25 14.6753 11.1842 14.5581 11.0669C14.4408 10.9497 14.375 10.7908 14.375 10.625Z"
-                  fill="#B6B6B6"
-                />
-              </svg>
-            </div>
-            <div className="content-listing-info">
-              <span className="listing-info-title">City MPG:</span>
-              <p className="listing-info-value">20</p>
+              <p className="listing-info-value">{carItem.vehicleDetail.details.transmission}</p>
             </div>
           </div>
         </div>
@@ -263,8 +198,8 @@ export default function Overview() {
               </svg>
             </div>
             <div className="content-listing-info">
-              <span className="listing-info-title">Engine Size:</span>
-              <p className="listing-info-value">2.9</p>
+              <span className="listing-info-title">Engine Description</span>
+              <p className="listing-info-value">{carItem.vehicleDetail.details.engine_description}</p>
             </div>
           </div>
         </div>
@@ -285,8 +220,8 @@ export default function Overview() {
               </svg>
             </div>
             <div className="content-listing-info">
-              <span className="listing-info-title">Highway MPG:</span>
-              <p className="listing-info-value">24</p>
+              <span className="listing-info-title">Miles</span>
+              <p className="listing-info-value">{carItem.miles}</p>
             </div>
           </div>
         </div>
@@ -308,7 +243,7 @@ export default function Overview() {
             </div>
             <div className="content-listing-info">
               <span className="listing-info-title">Drive Type:</span>
-              <p className="listing-info-value">AWD – All-wheel drive</p>
+              <p className="listing-info-value">{carItem.vehicleDetail.details.body_type}</p>
             </div>
           </div>
         </div>

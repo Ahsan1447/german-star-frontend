@@ -1,6 +1,6 @@
 import Cars1 from "@/components/carsListings/Cars1";
 import Footer1 from "@/components/footers/Footer1";
-import Header2 from "@/components/headers/Header2";
+import Header1 from "@/components/headers/Header1";
 import React from "react";
 import { Link } from "react-router-dom";
 import MetaComponent from "@/components/common/MetaComponent";
@@ -14,7 +14,7 @@ export default function ListingListPage() {
     <>
       <MetaComponent meta={metadata} />
       <div className="header-fixed">
-        <Header2 />
+        <Header1 />
       </div>
       <section className="flat-title">
         <div className="container2">

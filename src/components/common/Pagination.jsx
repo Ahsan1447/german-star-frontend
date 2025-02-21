@@ -2,11 +2,10 @@ import React, { useState } from "react";
 
 export default function Pagination({
   itemLength = 200,
-  itemPerPage = 10,
   setPage = (num) => {},
   currentPage,
 }) {
-  const totalPages = Math.ceil(itemLength / itemPerPage); // Adjust as needed
+  const totalPages = Math.ceil(itemLength); // Adjust as needed
 
   const handlePageClick = (page) => {
     if (page != 0 && page <= totalPages) {

@@ -42,10 +42,10 @@ export default function Hero() {
                 <div className="col-lg-12">
                   <div className="content po-content-two">
                     <div className="heading">
-                      <h1 className="text-color-1 fade-item fade-item-1">
+                      {/* <h1 className="text-color-1 fade-item fade-item-1">
                         2012 Nissan Leaf SV
-                      </h1>
-                      <ul className="ul flex flex-wrap category-list-car fade-item fade-item-2">
+                      </h1> */}
+                      {/* <ul className="ul flex flex-wrap category-list-car fade-item fade-item-2">
                         <li className="flex-three">
                           <div className="icon">
                             <svg
@@ -107,8 +107,8 @@ export default function Hero() {
                           </div>
                           <div className="font text-color-1">Est. $151/mo</div>
                         </li>
-                      </ul>
-                      <div className="chat-wrap flex-three fade-item fade-item-3">
+                      </ul> */}
+                      {/* <div className="chat-wrap flex-three fade-item fade-item-3">
                         <a href="#" className="chat">
                           Chat
                         </a>
@@ -132,7 +132,7 @@ export default function Hero() {
                             </span>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

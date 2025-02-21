@@ -2,24 +2,24 @@ import { allCars } from "@/data/cars";
 
 export const initialState = {
   price: [50000, 100000],
-  km: [50000, 100000],
-  year: [2017, 2024],
-  body: "Any Body",
-  make: "Any Make",
-  model: "Any Model",
-  fuel: "Any Fuel",
+  km: [2000, 100000],
+  year: [2015, 2024],
+  body: "Any",
+  make: "Any",
+  model: "Any",
+  fuel: "Any",
   transmission: "Any Transmission",
   location: "Any Location",
-  door: "Any Door",
+  door: "Any",
   cylinder: "Any Cylinder",
-  color: "Any Color",
+  color: "Any",
 
   features: [],
   filtered: allCars,
   sortingOption: "Sort by (Default)",
   sorted: allCars,
   currentPage: 1,
-  itemPerPage: 6,
+  itemPerPage: 10,
 };
 
 export function reducer(state, action) {

@@ -12,7 +12,7 @@ export default function Header1() {
           <div className="row">
             <div className="col-lg-12">
               <div className="inner-container flex justify-space align-center">
-                {/* Logo Box */}
+                
                 <div className="logo-box flex">
                   <div className="logo">
                     <Link to={`/`}>
@@ -35,8 +35,8 @@ export default function Header1() {
                     </Link>
                   </div>
                 </div>
-                <div className="nav-outer flex align-center">
-                  {/* Main Menu */}
+                {/* <div className="nav-outer flex align-center">
+                  
                   <nav className="main-menu show navbar-expand-md">
                     <div
                       className="navbar-collapse collapse clearfix"
@@ -47,10 +47,10 @@ export default function Header1() {
                       </ul>
                     </div>
                   </nav>
-                  {/* Main Menu End*/}
-                </div>
+                 
+                </div> */}
                 <div className="header-account flex align-center">
-                  <div className="search-mobie">
+                  {/* <div className="search-mobie">
                     <a
                       onClick={() => {
                         document
@@ -82,9 +82,9 @@ export default function Header1() {
                         </div>
                       </form>
                     </div>
-                  </div>
+                  </div> */}
                   <a
-                    href="#"
+                    href="/my-favorite"
                     className="header-favorite flex items-center justify-center"
                   >
                     <i className="icon-autodeal-favorite fs-18" />
@@ -97,8 +97,8 @@ export default function Header1() {
                       <li className="">
                         <a
                           href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#popup_bid"
+                          // data-bs-toggle="modal"
+                          // data-bs-target="#popup_bid"
                         >
                           Login
                         </a>
@@ -109,15 +109,15 @@ export default function Header1() {
                       <li className="">
                         <a
                           href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#popup_bid2"
+                          // data-bs-toggle="modal"
+                          // data-bs-target="#popup_bid2"
                         >
                           Register
                         </a>
                       </li>
                     </ul>
                   </div>
-                  <div className="flat-bt-top">
+                  {/* <div className="flat-bt-top">
                     <Link className="sc-button" to={`/add-listing`}>
                       <svg
                         width={21}
@@ -153,7 +153,7 @@ export default function Header1() {
                       </svg>
                       <span>Add listing</span>
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
                 <div
                   className="mobile-nav-toggler mobile-button"
@@ -168,9 +168,8 @@ export default function Header1() {
           </div>
         </div>
       </div>
-      {/* End Header Lower */}
-      {/* Mobile Menu  */}
-      <div
+
+      {/* <div
         className="close-btn"
         onClick={() => document.body.classList.remove("mobile-menu-visible")}
       >
@@ -246,8 +245,8 @@ export default function Header1() {
             </div>
           </div>
         </nav>
-      </div>
-      {/* End Mobile Menu */}
+      </div> */}
+    
     </header>
   );
 }

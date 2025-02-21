@@ -22,7 +22,7 @@ export default function CarDetails1({ carItem }) {
                 <Slider1 />
                 <div className="row">
                   <div className="col-lg-12">
-                    <nav
+                    {/* <nav
                       id="navbar-example2"
                       className="navbar tab-listing-scroll"
                     >
@@ -53,7 +53,7 @@ export default function CarDetails1({ carItem }) {
                           </a>
                         </li>
                       </ul>
-                    </nav>
+                    </nav> */}
                     <div
                       data-bs-spy="scroll"
                       data-bs-target="#navbar-example2"
@@ -61,12 +61,12 @@ export default function CarDetails1({ carItem }) {
                       className="scrollspy-example"
                       tabIndex={0}
                     >
-                      <div className="listing-description mb-40">
+                      {/* <div className="listing-description mb-40">
                         <div className="tfcl-listing-header">
                           <h2>Description</h2>
                         </div>
                         <Description />
-                      </div>
+                      </div> */}
                       <div
                         className="listing-description footer-col-block"
                         id="scrollspyHeading1"
@@ -77,7 +77,7 @@ export default function CarDetails1({ carItem }) {
                         <div className="footer-heading-mobie listing-details-mobie">
                           <h2>Car overview</h2>
                         </div>
-                        <Overview />
+                        <Overview carItem={carItem} />
                       </div>
                       <div className="listing-line" />
                       <div
@@ -90,10 +90,10 @@ export default function CarDetails1({ carItem }) {
                         <div className="footer-heading-mobie listing-details-mobie mb-30">
                           <h2>Features</h2>
                         </div>
-                        <Features />
+                        <Features carItem={carItem} />
                       </div>
                       <div className="listing-line" />
-                      <div
+                      {/* <div
                         className="listing-calculator loan-calculator-form"
                         id="scrollspyHeading4"
                       >
@@ -105,9 +105,9 @@ export default function CarDetails1({ carItem }) {
                           </p>
                         </div>
                         <LoanCalculator />
-                      </div>
-                      <div className="listing-line" />
-                      <div className="listing-location" id="scrollspyHeading3">
+                      </div> */}
+                      {/* <div className="listing-line" /> */}
+                      {/* <div className="listing-location" id="scrollspyHeading3">
                         <div className="box-title">
                           <h2 className="title-ct">Location</h2>
                           <div className="list-icon-pf gap-8 flex-three">
@@ -124,8 +124,8 @@ export default function CarDetails1({ carItem }) {
                           loading="lazy"
                         />
                       </div>
-                      <div className="listing-line" />
-                      <div
+                      <div className="listing-line" /> */}
+                      {/* <div
                         className="listing-reviews flat-property-detail"
                         id="scrollspyHeading5"
                       >
@@ -135,7 +135,7 @@ export default function CarDetails1({ carItem }) {
                           </h2>
                         </div>
                         <CarReview />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -146,18 +146,18 @@ export default function CarDetails1({ carItem }) {
               <div className="listing-sidebar">
                 <div className="widget-listing mb-40">
                   <div className="heading-widget">
-                    <h2 className="title">{carItem.title}</h2>
+                    <h2 className="title">{carItem.vehicleDetail.details.title}</h2>
                     <CarInfo carItem={carItem} />
                   </div>
                 </div>
-                <div className="widget-listing mb-30">
+                {/* <div className="widget-listing mb-30">
                   <ProfileInfo />
-                </div>
-                <div className="list-icon-pf gap-8 flex-three mb-40">
+                </div> */}
+                {/* <div className="list-icon-pf gap-8 flex-three mb-40">
                   <i className="far fa-flag" />
                   <p className="font-1">Report this listing</p>
-                </div>
-                <div className="widget-listing">
+                </div> */}
+                {/* <div className="widget-listing">
                   <div className="listing-header mb-30">
                     <h3>Recommended Used Cars</h3>
                     <p>Showing 26 more cars you might like</p>
@@ -166,7 +166,7 @@ export default function CarDetails1({ carItem }) {
                   <a href="#" className="fs-16 fw-5 font text-color-3 lh-22">
                     View more reviews <i className="icon-autodeal-view-more" />
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -118,7 +118,7 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element={<HomePage1 />} />
-              <Route path="home02" element={<HomePage2 />} />
+              {/* <Route path="home02" element={<HomePage2 />} />
               <Route path="home03" element={<HomePage3 />} />
               <Route path="home04" element={<HomePage4 />} />
               <Route path="home05" element={<HomePage5 />} />
@@ -126,14 +126,14 @@ function App() {
               <Route path="home07" element={<HomePage7 />} />
               <Route path="home08" element={<HomePage8 />} />
               <Route path="home09" element={<HomePage9 />} />
-              <Route path="home10" element={<HomePage10 />} />
+              <Route path="home10" element={<HomePage10 />} /> */}
               <Route path="listing-list" element={<ListingListPage />} />
               <Route path="listing-grid" element={<ListingGridPage />} />
               <Route path="listing-grid2" element={<ListingGridPage2 />} />
               <Route path="listing-grid-map" element={<ListingGridMapPage />} />
               <Route path="listing-list-map" element={<ListingListMapPage />} />
               <Route
-                path="listing-detail-v1/:id"
+                path="detail/:id"
                 element={<BlogListingDetailsPage1 />}
               />
               <Route
@@ -166,16 +166,16 @@ function App() {
               <Route path="blog" element={<BlogPage />} />
               <Route path="blog-grid" element={<BlogGridPage />} />
               <Route path="blog-detail/:id" element={<BlogDetailsPage />} />
-
+{/* 
               <Route path="dashboard" element={<DashboardPage />} />
-              <Route path="my-listing" element={<MyListingPage />} />
+              <Route path="my-listing" element={<MyListingPage />} /> */}
               <Route path="my-favorite" element={<MyFavoritePage />} />
-              <Route path="message" element={<MessagePage />} />
+              {/* <Route path="message" element={<MessagePage />} />
               <Route path="my-review" element={<MyReviewPage />} />
               <Route path="my-profile" element={<MyProfilePage />} />
               <Route path="change-password" element={<ChangePassPage />} />
               <Route path="add-listing" element={<AddListingPage />} />
-              <Route path="contact" element={<ContactPage />} />
+              <Route path="contact" element={<ContactPage />} /> */}
             </Route>
           </Routes>
         </div>
