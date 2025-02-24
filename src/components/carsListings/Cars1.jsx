@@ -2,7 +2,6 @@ import React, { useEffect, useReducer, useState } from "react";
 import Pricing from "../common/Pricing";
 
 import { Link } from "react-router-dom";
-import { allCars } from "@/data/cars";
 import DropdownSelect from "../common/DropDownSelect";
 import { featureOptions } from "@/data/filterOptions";
 import { initialState, reducer } from "@/reducer/carFilterReducer";
@@ -17,6 +16,9 @@ export default function Cars1() {
     year,
     make,
     color,
+    cylinder,
+    fuel,
+    transmission,
   } = state;
 
   const allProps = {
@@ -27,6 +29,9 @@ export default function Cars1() {
     setBody: (value) => dispatch({ type: "SET_BODY", payload: value }),
     setMake: (value) => dispatch({ type: "SET_MAKE", payload: value }),
     setColor: (value) => dispatch({ type: "SET_COLOR", payload: value }),
+    setCylinder: (value) => dispatch({ type: "SET_CYLINDER", payload: value }),
+    setFuel: (value) => dispatch({ type: "SET_FUEL", payload: value }),
+    setTransmission: (value) => dispatch({ type: "SET_TRANSMISSION", payload: value }),
   };
 
   const clearFilter = () => {
@@ -77,6 +82,9 @@ export default function Cars1() {
       yearMax: year[1],
       kmMin: km[0],
       kmMax: km[1],
+      fuel,
+      transmission,
+      cylinder
     });
   };
 
@@ -138,6 +146,33 @@ export default function Cars1() {
                           />
                         </div>
                       </div>
+                      <div className="form-group">
+                        <div className="group-select">
+                          <DropdownSelect
+                            selectedValue={cylinder}
+                            onChange={allProps.setCylinder}
+                            options={["2","4","6","8"]}
+                          />
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="group-select">
+                          <DropdownSelect
+                            selectedValue={fuel}
+                            onChange={allProps.setFuel}
+                            options={["Gasoline", "Diesel", "Electric", "Hybrid"]}
+                          />
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="group-select">
+                          <DropdownSelect
+                            selectedValue={transmission}
+                            onChange={allProps.setTransmission}
+                            options={["Automatic", "Manual"]}
+                          />
+                        </div>
+                      </div>
                       <div className="form-group wg-box3">
                         <div className="widget widget-price">
                           <div className="caption flex-two">
@@ -161,7 +196,7 @@ export default function Cars1() {
                           <div className="caption flex-two">
                             <div>
                               <span className="fw-6">
-                                KM: {km[0]} km - {km[1]} km
+                                Miles: {km[0]} - {km[1]}
                               </span>
                             </div>
                           </div>
