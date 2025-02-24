@@ -35,7 +35,7 @@ export default function Cars1() {
     fetchCars();
   };
 
-  const [isGrid, setIsGrid] = useState(false);
+  const [isGrid, setIsGrid] = useState(true);
 
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -217,7 +217,7 @@ export default function Cars1() {
                                 </ul>
                                 <div className="year flag-tag">{car.year}</div>
                               </div>
-                              <ul className="change-heart flex">
+                              {/* <ul className="change-heart flex">
                                 <li className="box-icon w-32">
                                   <a
                                     data-bs-toggle="offcanvas"
@@ -261,7 +261,8 @@ export default function Cars1() {
                                     </svg>
                                   </Link>
                                 </li>
-                              </ul>
+                              </ul> */}
+                              
                               <div className="img-style">
                                 <img
                                   className="lazyload"
@@ -297,10 +298,12 @@ export default function Cars1() {
                                     <i className="icon-autodeal-color" />
                                     <span>{car.color}</span>
                                   </div>
+                                  {isGrid && 
+                                  <div className="icons flex-three">
+                                    <Link to={`/detail/${car.vin}`}>View Details</Link>
+                                  </div>
+                                  }
                                 </div>
-                                {/* <div className="money fs-20 fw-5 lh-25 text-color-3">
-                                  ${car.price}
-                                </div> */}
                                 <Link
                                   to={`/detail/${car.vin}`}
                                   className="view-car"
