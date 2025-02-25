@@ -5,8 +5,8 @@ import Header2 from "@/components/headers/Header2";
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
   title:
-    "My Favourites || AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
-  description: "AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
+    "AutoDecar",
+  description: "AutoDecar",
 };
 export default function MyFavoritePage() {
   return (

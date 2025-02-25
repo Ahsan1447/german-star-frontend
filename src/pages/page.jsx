@@ -16,8 +16,8 @@ import Process from "@/components/homes/home-1/Process";
 import MetaComponent from "@/components/common/MetaComponent";
 import Cars1 from "@/components/carsListings/Cars1";
 const metadata = {
-  title: "Home 01 || AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
-  description: "AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
+  title: "AutoDecor",
+  description: "AutoDecor",
 };
 export default function HomePage1() {
   return (

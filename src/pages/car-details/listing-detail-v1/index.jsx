@@ -8,8 +8,8 @@ import { allCars } from "@/data/cars";
 import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
   title:
-    "Car Details 01 || AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
-  description: "AutoDeal - Car Dealer, Rental & Listing Reactjs Template",
+    "AutoDecor",
+  description: "AutoDecor",
 };
 export default function BlogListingDetailsPage1() {
   let params = useParams();

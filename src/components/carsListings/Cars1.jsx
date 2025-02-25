@@ -12,26 +12,56 @@ import axios from "axios";
 export default function Cars1() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
-    km,
+    miles,
     year,
     make,
+    body,
+    model,
     color,
     cylinder,
     fuel,
     transmission,
+    drivetrain,
   } = state;
+
+  const makeModelOptions = {
+    "Any Make": ["Any Model"],
+    Dodge: ["Any Model","Charger"],
+    Ford: ["Any Model","Edge", "Expedition", "Bronco","F-150","Transit Wagon","Super Duty F-250 SRW", "Explorer","Super Duty F-450 DRW"],
+    Audi: ["Any Model","Q5", "R8 Spyder", "RS 5 Coupe"],
+    Lexus: ["Any Model","RX", "RX 350"],
+    Jeep: ["Any Model","Grand Cherokee L", "Wagoneer"],
+    Acura: ["Any Model","MDX"],
+    Cadillac: ["Any Model","Escalade"],
+    GMC: ["Any Model","Yukon XL", "Sierra 1500", "Yukon","Sierra 2500HD"],
+    Lincoln: ["Any Model","Navigator", "Navigator L"],
+    Ram: ["Any Model","1500 Classic", "1500"],
+    Chevrolet: ["Any Model","Suburban", "Silverado 1500", "Silverado 2500HD"],
+    INFINITI: ["Any Model","Q50"],
+    Porsche: ["Any Model","Cayenne", "Panamera", "Macan"],
+    Jaguar: ["Any Model","F-PACE"],
+    "Mercedes-Benz": ["Any Model","G-Class","GLC"],
+    "Land Rover": [ "Any Model","Defender"],
+    Nissan: ["Any Model","GT-R"],
+    BMW: ["Any Model","3 Series", "4 Series", "5 Series", "6 Series", "X5", "X6", "X7", "M2","M3","M4","M5"],
+    Volkswagen: ["Any Model","Golf R"],
+    Toyota: ["Any Model","GR Corolla", "Tundra"]
+  };
 
   const allProps = {
     ...state,
     setPrice: (value) => dispatch({ type: "SET_PRICE", payload: value }),
     setYear: (value) => dispatch({ type: "SET_YEAR", payload: value }),
-    setKM: (value) => dispatch({ type: "SET_KM", payload: value }),
+    setMiles: (value) => dispatch({ type: "SET_MILES", payload: value }),
     setBody: (value) => dispatch({ type: "SET_BODY", payload: value }),
     setMake: (value) => dispatch({ type: "SET_MAKE", payload: value }),
+    setBody: (value) => dispatch({ type: "SET_BODY", payload: value }),
+    setModel: (value) => dispatch({ type: "SET_MODEL", payload: value }),
     setColor: (value) => dispatch({ type: "SET_COLOR", payload: value }),
     setCylinder: (value) => dispatch({ type: "SET_CYLINDER", payload: value }),
     setFuel: (value) => dispatch({ type: "SET_FUEL", payload: value }),
     setTransmission: (value) => dispatch({ type: "SET_TRANSMISSION", payload: value }),
+    setDrivetrain: (value) => dispatch({ type: "SET_DRIVETRAIN", payload: value }),
   };
 
   const clearFilter = () => {
@@ -44,7 +74,6 @@ export default function Cars1() {
 
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
   const [filters, setFilters] = useState({}); // Stores applied filters
   const [totalPages, setTotalPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,7 +88,7 @@ export default function Cars1() {
         ...filters, // Only sends filters when "Apply Filters" is clicked
       };
 
-      const response = await axios.get("http://localhost:8000/api/vehicles", { params });
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/vehicles`, { params });
 
       setCars(response.data.data);
       setTotalPages(response.data.totalPages);
@@ -77,14 +106,17 @@ export default function Cars1() {
   const applyFilters = () => {
     setFilters({
       make,
+      model,
+      body,
       color,
       yearMin: year[0],
       yearMax: year[1],
-      kmMin: km[0],
-      kmMax: km[1],
+      milesMin: miles[0],
+      milesMax: miles[1],
       fuel,
       transmission,
-      cylinder
+      cylinder,
+      drivetrain
     });
   };
 
@@ -122,8 +154,23 @@ export default function Cars1() {
                         <div className="group-select">
                           <DropdownSelect
                             selectedValue={make}
-                            onChange={allProps.setMake}
-                            options={["Dodge", "Ram", "Porsche", "Forge", "BMW","Volkswagen", "Mercedes-Benz", "Chevrolet", "Lexus", "GMC", "INFINITI", "Lincoln", "Toyota"]}
+                            onChange={(selectedMake) => {
+                              allProps.setMake(selectedMake);
+                              allProps.setModel("Any Model"); // Reset model when make changes
+                            }}
+                            options={Object.keys(makeModelOptions)}
+                            defaultOption="Any Make"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <div className="group-select">
+                          <DropdownSelect
+                            selectedValue={model}
+                            onChange={allProps.setModel}
+                            options={makeModelOptions[make] || []}
+                            defaultOption="Any Model"
                           />
                         </div>
                       </div>
@@ -134,7 +181,7 @@ export default function Cars1() {
                             selectedValue={color}
                             onChange={allProps.setColor}
                             options={[
-                              "Any",
+                              "Any Color",
                               "Black",
                               "White",
                               "Blue",
@@ -146,12 +193,69 @@ export default function Cars1() {
                           />
                         </div>
                       </div>
+
+
+                      <div className="form-group">
+                        <div className="group-select">
+                          <DropdownSelect
+                            selectedValue={body}
+                            onChange={allProps.setBody}
+                            options={[
+                            "Any Body",
+                             "SUV",
+                             "Sport Utility",
+                             "Extended Cab Pickup - Standard Bed",
+                             "Crew Cab Standard Bed",
+                             "Crew Cab Pickup - Long Bed",
+                             "Convertible",
+                             "Sedan",
+                             "4dr Car",
+                             "Crew Cab Pickup - Standard Bed",
+                             "Crew Cab Short Box",
+                             "Full-size Passenger Van",
+                             "Coupe",
+                             "2dr Car",
+                             "Crew Cab Pickup - Short Bed",
+                            ]}
+                            defaultOption={"Any Body"}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <div className="group-select">
+                          <DropdownSelect
+                            selectedValue={color}
+                            onChange={allProps.setColor}
+                            options={[
+                              "Any Color",
+                              "Black",
+                              "White",
+                              "Blue",
+                              "Gray",
+                              "Red",
+                              "Silver",
+                              "Orange",
+                            ]}
+                            defaultOption={"Any Color"}
+                          />
+                        </div>
+                      </div>
                       <div className="form-group">
                         <div className="group-select">
                           <DropdownSelect
                             selectedValue={cylinder}
                             onChange={allProps.setCylinder}
-                            options={["2","4","6","8"]}
+                            options={["Any Cylinder","3","4","6","8","10"]}
+                          />
+                        </div>
+                      </div> 
+                      <div className="form-group">
+                        <div className="group-select">
+                          <DropdownSelect
+                            selectedValue={drivetrain}
+                            onChange={allProps.setDrivetrain}
+                            options={["Any Drivetrain","FWD", "RWD", "AWD"]}
                           />
                         </div>
                       </div>
@@ -160,7 +264,7 @@ export default function Cars1() {
                           <DropdownSelect
                             selectedValue={fuel}
                             onChange={allProps.setFuel}
-                            options={["Gasoline", "Diesel", "Electric", "Hybrid"]}
+                            options={["Any Fuel", "Gasoline", "Diesel", "Electric", "Hybrid"]}
                           />
                         </div>
                       </div>
@@ -169,7 +273,7 @@ export default function Cars1() {
                           <DropdownSelect
                             selectedValue={transmission}
                             onChange={allProps.setTransmission}
-                            options={["Automatic", "Manual"]}
+                            options={["Any Transmission","Automatic", "Manual"]}
                           />
                         </div>
                       </div>
@@ -183,31 +287,29 @@ export default function Cars1() {
                             </div>
                           </div>
                           <Pricing
-                            MIN={2015}
+                            MIN={2009}
                             MAX={2025}
                             priceRange={year}
                             setPriceRange={allProps.setYear}
                           />
                         </div>
-                        {/* /.widget_price */}
                       </div>
                       <div className="form-group wg-box3">
                         <div className="widget widget-price">
                           <div className="caption flex-two">
                             <div>
                               <span className="fw-6">
-                                Miles: {km[0]} - {km[1]}
+                                Miles: {miles[0]} - {miles[1]}
                               </span>
                             </div>
                           </div>
                           <Pricing
                             MIN={2000}
-                            MAX={115000}
-                            priceRange={km}
-                            setPriceRange={allProps.setKM}
+                            MAX={100000}
+                            priceRange={miles}
+                            setPriceRange={allProps.setMiles}
                           />
                         </div>
-                        {/* /.widget_price */}
                       </div>
                       <button type="button" className="view-car" onClick={applyFilters}>Apply Filters</button>
                     </div>
@@ -229,80 +331,15 @@ export default function Cars1() {
                               <div className="top flex-two">
                                 <ul className="d-flex gap-8">
                                   <li className="flag-tag success">Featured</li>
-                                  {/* <li className="flag-tag style-1">
-                                    <div className="icon">
-                                      <svg
-                                        width={16}
-                                        height={13}
-                                        viewBox="0 0 16 13"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M1.5 9L4.93933 5.56067C5.07862 5.42138 5.24398 5.31089 5.42597 5.2355C5.60796 5.16012 5.80302 5.12132 6 5.12132C6.19698 5.12132 6.39204 5.16012 6.57403 5.2355C6.75602 5.31089 6.92138 5.42138 7.06067 5.56067L10.5 9M9.5 8L10.4393 7.06067C10.5786 6.92138 10.744 6.81089 10.926 6.7355C11.108 6.66012 11.303 6.62132 11.5 6.62132C11.697 6.62132 11.892 6.66012 12.074 6.7355C12.256 6.81089 12.4214 6.92138 12.5607 7.06067L14.5 9M2.5 11.5H13.5C13.7652 11.5 14.0196 11.3946 14.2071 11.2071C14.3946 11.0196 14.5 10.7652 14.5 10.5V2.5C14.5 2.23478 14.3946 1.98043 14.2071 1.79289C14.0196 1.60536 13.7652 1.5 13.5 1.5H2.5C2.23478 1.5 1.98043 1.60536 1.79289 1.79289C1.60536 1.98043 1.5 2.23478 1.5 2.5V10.5C1.5 10.7652 1.60536 11.0196 1.79289 11.2071C1.98043 11.3946 2.23478 11.5 2.5 11.5ZM9.5 4H9.50533V4.00533H9.5V4ZM9.75 4C9.75 4.0663 9.72366 4.12989 9.67678 4.17678C9.62989 4.22366 9.5663 4.25 9.5 4.25C9.4337 4.25 9.37011 4.22366 9.32322 4.17678C9.27634 4.12989 9.25 4.0663 9.25 4C9.25 3.9337 9.27634 3.87011 9.32322 3.82322C9.37011 3.77634 9.4337 3.75 9.5 3.75C9.5663 3.75 9.62989 3.77634 9.67678 3.82322C9.72366 3.87011 9.75 3.9337 9.75 4Z"
-                                          stroke="white"
-                                          strokeWidth="1.5"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                        />
-                                      </svg>
-                                    </div>
-                                    6
-                                  </li> */}
                                 </ul>
                                 <div className="year flag-tag">{car.year}</div>
                               </div>
-                              {/* <ul className="change-heart flex">
-                                <li className="box-icon w-32">
-                                  <a
-                                    data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasBottom"
-                                    aria-controls="offcanvasBottom"
-                                    className="icon"
-                                  >
-                                    <svg
-                                      width={18}
-                                      height={18}
-                                      viewBox="0 0 18 18"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M5.25 16.5L1.5 12.75M1.5 12.75L5.25 9M1.5 12.75H12.75M12.75 1.5L16.5 5.25M16.5 5.25L12.75 9M16.5 5.25H5.25"
-                                        stroke="CurrentColor"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                      />
-                                    </svg>
-                                  </a>
-                                </li>
-                                <li className="box-icon w-32">
-                                  <Link to={`/my-favorite`} className="icon">
-                                    <svg
-                                      width={18}
-                                      height={16}
-                                      viewBox="0 0 18 16"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M16.5 4.875C16.5 2.80417 14.7508 1.125 12.5933 1.125C10.9808 1.125 9.59583 2.06333 9 3.4025C8.40417 2.06333 7.01917 1.125 5.40583 1.125C3.25 1.125 1.5 2.80417 1.5 4.875C1.5 10.8917 9 14.875 9 14.875C9 14.875 16.5 10.8917 16.5 4.875Z"
-                                        stroke="CurrentColor"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                      />
-                                    </svg>
-                                  </Link>
-                                </li>
-                              </ul> */}
                               
                               <div className="img-style">
                                 <img
                                   className="lazyload"
                                   alt="image"
-                                  src={car.imgSrc}
+                                  src={car.thumbnail}
                                   width={450}
                                   height={338}
                                 />
@@ -316,7 +353,7 @@ export default function Cars1() {
                                   </p>
                                 </div>
                                 <h5 className="link-style-1">
-                                  <Link to={`/listing-detail-v1/${car.id}`}>
+                                  <Link to={`/detail/${car.vin}`}>
                                     {car.make}
                                   </Link>
                                 </h5>

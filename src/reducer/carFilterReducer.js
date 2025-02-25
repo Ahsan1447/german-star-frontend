@@ -2,9 +2,9 @@ import { allCars } from "@/data/cars";
 
 export const initialState = {
   price: [50000, 100000],
-  km: [2000, 100000],
-  year: [2015, 2024],
-  body: "Any",
+  miles: [2000, 100000],
+  year: [2021, 2025],
+  body: "Any Body",
   make: "Any Make",
   model: "Any Model",
   fuel: "Any Fuel",
@@ -13,6 +13,7 @@ export const initialState = {
   door: "Any",
   cylinder: "Any Cylinder",
   color: "Any Color",
+  drivetrain: "Any Drivetrain",
 
   features: [],
   filtered: allCars,
@@ -28,8 +29,8 @@ export function reducer(state, action) {
       return { ...state, price: action.payload };
     case "SET_YEAR":
       return { ...state, year: action.payload };
-    case "SET_KM":
-      return { ...state, km: action.payload };
+    case "SET_MILES":
+      return { ...state, miles: action.payload };
     case "SET_MODEL":
       return { ...state, model: action.payload };
     case "SET_BODY":
@@ -45,7 +46,9 @@ export function reducer(state, action) {
     case "SET_DOOR":
       return { ...state, door: action.payload };
     case "SET_CYLINDER":
-      return { ...state, cylinder: action.payload };
+      return { ...state, cylinder: action.payload };    
+    case "SET_DRIVETRAIN":
+      return { ...state, drivetrain: action.payload };
     case "SET_COLOR":
       return { ...state, color: action.payload };
     case "SET_FEATURES":
@@ -64,9 +67,9 @@ export function reducer(state, action) {
       return {
         ...state,
         price: [50000, 100000],
-        km: [2000, 100000],
-        year: [2015, 2024],
-        body: "Any",
+        miles: [2000, 100000],
+        year: [2021, 2025],
+        body: "Any Body",
         make: "Any Make",
         model: "Any Model",
         fuel: "Any Fuel",
@@ -75,6 +78,7 @@ export function reducer(state, action) {
         door: "Any",
         cylinder: "Any Cylinder",
         color: "Any Color",
+        drivetrain: "Any Drivetrain",
 
         features: [],
       };
