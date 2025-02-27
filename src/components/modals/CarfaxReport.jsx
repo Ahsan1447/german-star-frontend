@@ -23,7 +23,7 @@ export default function CarfaxReport({ carItem }) {
             <span aria-hidden="true">×</span>
           </button>
           <div className="modal-body">
-            <h1 className="title-login text-center">Carfax Report</h1>
+            <h1 className="title-login text-center pt-4">Carfax Report</h1>
             <p className="text-center fw-6">Report Date:  {reportDate}</p>
 
             {/* Carfax Report Table */}
@@ -51,13 +51,12 @@ export default function CarfaxReport({ carItem }) {
                 </tbody>
               </table>
             </div>
-
-            <div className="text-center">
+          </div>
+          <div className="modal-footer">
               <button className="sc-button" data-bs-dismiss="modal">
                 <span>Close</span>
               </button>
             </div>
-          </div>
         </div>
       </div>
     </div>
