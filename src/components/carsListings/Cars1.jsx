@@ -320,7 +320,7 @@ export default function Cars1() {
                                 <img
                                   className="lazyload"
                                   alt="image"
-                                  src={car.thumbnail}
+                                  src={`${import.meta.env.VITE_BACKEND_BASE_URL}/${car.thumbnail}`}
                                   width={450}
                                   height={338}
                                 />

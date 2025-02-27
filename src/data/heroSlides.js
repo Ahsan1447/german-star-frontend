@@ -1,6 +1,9 @@
 export const slides = [
   { imgSrc: "/assets/images/slider/slide1.jpg" },
   { imgSrc: "/assets/images/slider/slide2.jpg" },
+  { imgSrc: "/assets/images/slider/slide3.jpg" },
+  { imgSrc: "/assets/images/slider/slide4.jpg" },
+  { imgSrc: "/assets/images/slider/slide5.jpg" },
 ];
 
 export const slides2 = [

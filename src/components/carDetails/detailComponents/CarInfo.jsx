@@ -16,21 +16,21 @@ export default function CarInfo({ carItem }) {
       <div className="icon-box flex flex-wrap">
         <div className="icons flex-three">
           <i className="icon-autodeal-km1" />
-          <span style={{marginLeft:"5px"}}> {carItem.miles} miles</span>
+          <span style={{ marginLeft: "5px" }}> {carItem.miles} miles</span>
         </div>
         <div className="icons flex-three">
           <i className="icon-autodeal-diesel" />
-          <span style={{marginLeft:"5px"}}>{carItem.vehicleDetail.details.fuel_type}</span>
+          <span style={{ marginLeft: "5px" }}>{carItem.vehicleDetail.details.fuel_type}</span>
         </div>
         <div className="icons flex-three">
           <i className="icon-autodeal-automatic" />
-          <span style={{marginLeft:"5px"}}>{carItem.vehicleDetail.details.transmission}</span>
+          <span style={{ marginLeft: "5px" }}>{carItem.vehicleDetail.details.transmission}</span>
         </div>
       </div>
 
       <ul className="action-icon flex flex-wrap">
         <li>
-          <a href="#" onClick={addToFavoroites} className="icon">
+          <a href="#" onClick={addToFavoroites} className="icon" title="add to favorites">
             <svg
               width={16}
               height={14}
@@ -46,6 +46,16 @@ export default function CarInfo({ carItem }) {
                 strokeLinejoin="round"
               />
             </svg>
+          </a>
+        </li>
+
+        <li className="view-car">
+          <a
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#summary_bid"
+          >
+            Show Cartex Report
           </a>
         </li>
       </ul>

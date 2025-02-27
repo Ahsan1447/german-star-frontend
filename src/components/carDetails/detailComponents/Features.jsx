@@ -1,26 +1,32 @@
 import Accordion from "@/components/common/Accordions";
 import { features } from "@/data/faqs";
-import React from "react";
+import React, {useMemo } from "react";
 
 export default function Features({ carItem }) {
+
+  const transformData = (data) => {
+    const groupedData = data.reduce((acc, option) => {
+      if (!acc[option.option_class]) {
+        acc[option.option_class] = [];
+      }
+      acc[option.option_class].push(option.option_name);
+      return acc;
+    }, {});
+  
+    return Object.keys(groupedData).map((key) => ({
+      title: key.replace(/_/g, " "),
+      content: groupedData[key], 
+    }));
+  };
+  
+  const formattedData = useMemo(() => transformData(carItem.vehicleDetail.details.options), []);
   return (
     <>
-      <div className="features-inner tf-collapse-content">
-        <div className="inner">
-          {carItem.vehicleDetail.details.options && carItem.vehicleDetail.details.options.map((option, index) => (
-            <div key={index} className="listing-feature-wrap flex">
-              <i className="icon-autodeal-check" />
-              <p>{option.option_name}</p>
-            </div>
-          ))}
-
+      <div className="row">
+        <div className="col-lg-12 flat-accordion">
+          <Accordion parentClass="flat-toggle style-1" faqData={formattedData} />
         </div>
       </div>
-      {/* <div className="row">
-        <div className="col-lg-12 flat-accordion">
-          <Accordion parentClass="flat-toggle style-1" faqData={features} />
-        </div>
-      </div> */}
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function CarDetails1({ carItem }) {
           <div className="row">
             <div className="col-lg-8">
               <div className="listing-detail-wrap">
-                <Slider1 />
+                <Slider1 carItem={carItem} />
                 <div className="row">
                   <div className="col-lg-12">
                     {/* <nav

@@ -75,9 +75,8 @@ export default function MyFavourite() {
                               <img
                                 className="lazyload"
                                 alt="image"
-                                src={car.imgSrc}
-                                width={450}
-                                height={338}
+                                src={`${import.meta.env.VITE_BACKEND_BASE_URL}/${car.thumbnail}`}
+                      
                               />
                             </div>
                           </div>

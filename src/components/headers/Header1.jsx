@@ -97,8 +97,8 @@ export default function Header1() {
                       <li className="">
                         <a
                           href="#"
-                          // data-bs-toggle="modal"
-                          // data-bs-target="#popup_bid"
+                          data-bs-toggle="modal"
+                          data-bs-target="#popup_bid"
                         >
                           Login
                         </a>

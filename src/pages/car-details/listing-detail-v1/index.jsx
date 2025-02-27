@@ -4,8 +4,8 @@ import Footer1 from "@/components/footers/Footer1";
 import Header2 from "@/components/headers/Header2";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import { allCars } from "@/data/cars";
 import MetaComponent from "@/components/common/MetaComponent";
+import CarfaxReport from "@/components/modals/CarfaxReport";
 const metadata = {
   title:
     "AutoDecor",
@@ -47,12 +47,6 @@ export default function BlogListingDetailsPage1() {
           <div className="row">
             <div className="col-lg-12">
               <div className="title-inner style">
-                {/* <div className="title-group fs-12">
-                  <Link className="home fw-6 text-color-3" to={`/`}>
-                    Home
-                  </Link>
-                  <span>Used cars for sale</span>
-                </div> */}
               </div>
             </div>
           </div>
@@ -69,6 +63,7 @@ export default function BlogListingDetailsPage1() {
       )}
       {/* <CarDetails1 carItem={carItem} /> */}
       <Footer1 />
+      <CarfaxReport carItem={carItem?.vehicleDetail.details} />
     </>
   );
 }

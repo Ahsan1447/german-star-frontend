@@ -3,7 +3,7 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 
-export default function Slider1() {
+export default function Slider1({ carItem }) {
   const swiperOptions = {
     autoplay: {
       delay: 6000,
@@ -20,10 +20,15 @@ export default function Slider1() {
       prevEl: ".snbp1",
     },
   };
-  const images = [
-    "/assets/images/section/slider-listing1.jpg",
-    "/assets/images/section/slider-listing1.jpg",
+
+  const BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL;
+
+  // Merge thumbnail and images array
+  const imageUrls = [
+    `${BASE_URL}/${carItem.thumbnail}`,
+    ...(carItem.images?.map((img) => `${BASE_URL}/${img.image_id}`) || []),
   ];
+
   useEffect(() => {
     const lightbox = new PhotoSwipeLightbox({
       gallery: "#my-gallery",
@@ -43,7 +48,7 @@ export default function Slider1() {
       className="swiper mainslider slider home mb-40"
       id="my-gallery"
     >
-      {images.map((elm, i) => (
+      {imageUrls.map((elm, i) => (
         <SwiperSlide key={i} className="swiper-slide">
           <div className="image-list-details">
             <a
