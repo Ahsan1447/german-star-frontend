@@ -49,13 +49,13 @@ export default function CarInfo({ carItem }) {
           </a>
         </li>
 
-        <li className="view-car">
+        <li title="Show Carfax Report">
           <a
             href="#"
             data-bs-toggle="modal"
             data-bs-target="#summary_bid"
           >
-            Show Cartex Report
+            <img src="/assets/images/carfax.png" alt="icon" />
           </a>
         </li>
       </ul>

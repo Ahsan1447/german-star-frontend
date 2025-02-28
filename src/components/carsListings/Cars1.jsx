@@ -309,12 +309,12 @@ export default function Cars1() {
                         .map((car, i) => (
                           <div key={i} className="box-car-list style-2 hv-one">
                             <div className="image-group relative">
-                              <div className="top flex-two">
+                              {/* <div className="top flex-two">
                                 <ul className="d-flex gap-8">
                                   <li className="flag-tag success">Featured</li>
                                 </ul>
                                 <div className="year flag-tag">{car.year}</div>
-                              </div>
+                              </div> */}
                               
                               <div className="img-style">
                                 <img
@@ -330,12 +330,12 @@ export default function Cars1() {
                               <div className="inner1">
                                 <div className="text-address">
                                   <p className="text-color-3 font">
-                                    {car.model}
+                                    {car.make}
                                   </p>
                                 </div>
                                 <h5 className="link-style-1">
                                   <Link to={`/detail/${car.vin}`}>
-                                    {car.make}
+                                    {car.model}
                                   </Link>
                                 </h5>
                                 <div className="icon-box flex flex-wrap">
@@ -344,18 +344,18 @@ export default function Cars1() {
                                     <span>{car.miles} miles</span>
                                   </div>
                                   <div className="icons flex-three">
-                                    <i className="fa fa-address-book" />
-                                    <span>{car.location}</span>
-                                  </div>
-                                  <div className="icons flex-three">
                                     <i className="icon-autodeal-color" />
                                     <span>{car.color}</span>
                                   </div>
-                                  {isGrid && 
+                                  <div className="icons flex-three">
+                                    <i className="fa fa-address-book" />
+                                    <span>{car.location}</span>
+                                  </div>
+                                  {/* {isGrid && 
                                   <div className="icons flex-three">
                                     <Link to={`/detail/${car.vin}`}>View Details</Link>
                                   </div>
-                                  }
+                                  } */}
                                 </div>
                                 <Link
                                   to={`/detail/${car.vin}`}
