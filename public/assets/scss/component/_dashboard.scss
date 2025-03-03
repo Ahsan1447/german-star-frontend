@@ -42,7 +42,7 @@
 }
 
 #wrapper-dashboard #header .tf-btn {
-  background: #ff7101;
+  background: #f89520;
   color: #fff;
 }
 
@@ -235,7 +235,7 @@
 
 .sidebar-dashboard .db-list-menu ul li a:hover,
 .sidebar-dashboard .db-list-menu ul li a.active {
-  background: #ff7101;
+  background: #f89520;
   color: #fff !important;
 }
 
@@ -275,11 +275,11 @@
 }
 
 .sidebar-dashboard .db-media-box .group-title a:hover {
-  color: #ff7101;
+  color: #f89520;
 }
 
 .sidebar-dashboard .db-media-box .group-title i {
-  color: #ff7101;
+  color: #f89520;
   margin-right: 16px;
   font-size: 20px;
   vertical-align: text-bottom;
@@ -314,8 +314,8 @@
 
 .sidebar-dashboard .db-media-box .list-social li a:hover {
   color: #fff;
-  background: #ff7101;
-  border-color: #ff7101;
+  background: #f89520;
+  border-color: #f89520;
 }
 
 .sidebar-dashboard .db-media-box .media-social .group-title i {
@@ -331,7 +331,7 @@
 
 .db-email-box .icon {
   font-size: 37px;
-  color: #ff7101;
+  color: #f89520;
   margin-right: 25px;
 }
 
@@ -399,7 +399,7 @@
   font-size: 24px;
   margin-top: -4px;
   display: inline-block;
-  color: #ff7101;
+  color: #f89520;
 }
 
 .dashboard-toggle {
@@ -525,7 +525,7 @@
 -------------------------------------------------------------- */
 .widget_login_menu_widget .dropdown-menu {
   border: none;
-  border-top: 2px solid #ff7101;
+  border-top: 2px solid #f89520;
   min-width: 240px;
   background: #fff;
   box-shadow: 0px 30px 60px 0px #24272c1a;
@@ -584,7 +584,7 @@
   .user-dropdown-menu
   .list-group-item
   a.active {
-  color: #ff7101 !important;
+  color: #f89520 !important;
 }
 
 .table-responsive {
@@ -630,7 +630,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ff7101;
+  color: #f89520;
   background: #fff;
   font-size: 40px;
   margin-right: 20px;
@@ -766,7 +766,7 @@
 }
 
 .tfcl-dashboard .tfcl-dashboard-listing .result-text b {
-  color: #ff7101;
+  color: #f89520;
 }
 
 .tfcl-table-listing .table-responsive thead tr th:first-child {
@@ -861,7 +861,7 @@
 }
 
 .tfcl-table-listing .tfcl-listing-product .price .inner:nth-child(1) {
-  color: #ff7101;
+  color: #f89520;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -960,7 +960,7 @@
 }
 
 .tfcl-dashboard-reviews .star-rating-review i.active {
-  color: #ff7101;
+  color: #f89520;
 }
 
 .tfcl-dashboard-reviews .comment-by-user .content {
@@ -1022,7 +1022,7 @@
 .tfcl-empty-data {
   text-align: left;
   font-size: 16px;
-  color: #ff7101;
+  color: #f89520;
 }
 
 .tfcl-table-listing.tfcl-table-listing-sc {
@@ -1161,7 +1161,7 @@
   background: var(--theme-primary-rgba);
   padding: 6px 14px 6px 14px;
   border-radius: 999px;
-  border: 1px solid #ff7101;
+  border: 1px solid #f89520;
 }
 
 .tfcl-table-listing .column-status .tfcl-listing-status.status-pending {
@@ -1284,13 +1284,13 @@
 .tfcl-listing-listing .mypt-address i,
 .favorite-listing .mypt-address i {
   margin-right: 7px;
-  color: #ff7101;
+  color: #f89520;
   font-size: 14px;
 }
 
 .tfcl-listing-listing .tfcl-listing-price:nth-child(1),
 .favorite-listing .tfcl-listing-price:nth-child(1) {
-  color: #ff7101;
+  color: #f89520;
   font-size: 17px;
   font-weight: 700;
 }
@@ -1356,7 +1356,7 @@
 
 .tfcl-listing-listing .features-images .controller a:hover,
 .favorite-listing .controller a:hover {
-  background: #ff7101;
+  background: #f89520;
 }
 
 .tfcl-listing-listing
@@ -1411,7 +1411,7 @@
 
 .tfcl-listing-listing .features-images .controller-2 li a:hover,
 .tfcl-listing-listing .features-images .controller-2 li a.active {
-  background: #ff7101;
+  background: #f89520;
 }
 
 .tfcl-listing-listing
@@ -1450,9 +1450,9 @@
 
 .tfcl-pagination a:hover,
 .tfcl-pagination .current {
-  background: #ff7101;
+  background: #f89520;
   color: #fff;
-  border-color: #ff7101;
+  border-color: #f89520;
 }
 
 .tfcl-pagination a i::before {
@@ -1555,7 +1555,7 @@
 }
 
 .controller-sorting .count-list span {
-  color: #ff7101;
+  color: #f89520;
 }
 
 .controller-sorting .sorting-input {
@@ -1612,7 +1612,7 @@
   font-weight: 500;
   line-height: 22.4px;
   color: #fff;
-  background: #ff7101;
+  background: #f89520;
   padding: 14px 20px;
   border-radius: 14px;
   margin-bottom: 15px;
@@ -1679,7 +1679,7 @@
 }
 
 .tfcl-add-listing .thumbnail-media .item a:hover {
-  background: #ff7101;
+  background: #f89520;
 }
 
 .tfcl-add-listing h3 {
@@ -1804,8 +1804,8 @@
 }
 
 .tfcl-add-listing .group-checkbox input:checked::before {
-  background: #ff7101;
-  border-color: #ff7101;
+  background: #f89520;
+  border-color: #f89520;
 }
 
 .tfcl-add-listing .group-checkbox input:checked::after {
@@ -1916,7 +1916,7 @@
 }
 
 .tfcl-add-listing.car-attr .list-attrach .item a:hover {
-  background: #ff7101;
+  background: #f89520;
 }
 
 .tfcl-add-listing.car-attr .list-attrach .item .inner {
@@ -1937,7 +1937,7 @@
 }
 
 .tfcl-add-listing.car-attr .list-attrach .item .inner a:hover {
-  color: #ff7101;
+  color: #f89520;
 }
 
 .tfcl-add-listing.car-attr .list-attrach .item.upload {
@@ -1962,9 +1962,9 @@
   line-height: 22.4px;
   color: #fff;
   border-radius: 14px;
-  background: #ff7101;
+  background: #f89520;
   padding: 13px 20px;
-  border-color: #ff7101;
+  border-color: #f89520;
   outline: none;
   border: none;
   -webkit-transition: all 0.3s ease;
@@ -1979,11 +1979,11 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 22.4px;
-  color: #ff7101;
+  color: #f89520;
   border-radius: 14px;
   background: transparent;
   padding: 13px 20px;
-  border: 1px solid #ff7101;
+  border: 1px solid #f89520;
   outline: none;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -1998,7 +1998,7 @@
 }
 
 .group-button-submit .second-btn:hover {
-  background: #ff7101;
+  background: #f89520;
   color: #fff;
 }
 
@@ -2046,7 +2046,7 @@
 
 .tfcl_choose_avatar .choose-box button {
   border-radius: 10px;
-  background: #ff7101;
+  background: #f89520;
   position: absolute;
   top: 50%;
   left: 6px;
@@ -2342,7 +2342,7 @@
 }
 
 .tfcl-message .controller-chat .controll a:hover {
-  background: #ff7101;
+  background: #f89520;
 }
 
 .tfcl-message .controller-chat .controll a:hover * {
@@ -2360,7 +2360,7 @@
   line-height: 22.4px;
   color: #fff;
   padding: 10px 42px;
-  background: #ff7101;
+  background: #f89520;
   border-radius: 10px;
   position: absolute;
   right: 5px;
@@ -2393,7 +2393,7 @@
   font-weight: 500;
   line-height: 22.4px;
   padding: 14px 86px;
-  background: #ff7101;
+  background: #f89520;
   color: #fff;
   border-radius: 14px;
   border: none;
@@ -2472,8 +2472,8 @@
   .compare-thumb-main
   .compare-thumb
   .compare-listing-remove:hover {
-  background: #ff7101;
-  border-color: #ff7101;
+  background: #f89520;
+  border-color: #f89520;
 }
 #compare_listing_wrap
   .compare-listing
@@ -2561,8 +2561,8 @@
 }
 .wrap-single-compare .filter-compare li.active,
 .wrap-single-compare .filter-compare li:hover {
-  background: #ff7101;
-  border-color: #ff7101;
+  background: #f89520;
+  border-color: #f89520;
   color: #fff;
 }
 .wrap-single-compare .compare-table {
@@ -2657,7 +2657,7 @@
 .search-dealer-list .filter-search a.active,
 .search-dealer-list .filter-search a:hover {
   color: #fff;
-  background: #ff7101;
+  background: #f89520;
 }
 
 .search-dealer-list .filter-search a svg {
@@ -2678,7 +2678,7 @@
 
 .search-dealer-list .search-submit {
   min-width: 204px;
-  background: #ff7101;
+  background: #f89520;
   padding: 14px 20px;
   border-radius: 14px;
   color: #fff;
@@ -2766,7 +2766,7 @@
 }
 
 .tf-dealer-list .infor-dealder .rating span b {
-  color: #ff7101;
+  color: #f89520;
 }
 
 .tf-dealer-list .infor-dealder h4 {
@@ -2781,7 +2781,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 19.6px;
-  color: #ff7101;
+  color: #f89520;
 }
 
 .tf-dealer-list .dealer-phone a:hover {
@@ -2798,13 +2798,13 @@
 }
 
 .tf-dealer-list .dealder-button a {
-  border: 1px solid #ff7101;
+  border: 1px solid #f89520;
   border-radius: 14px;
   padding: 13px 34px;
   font-size: 16px;
   font-weight: 500;
   line-height: 20.16px;
-  color: #ff7101;
+  color: #f89520;
 }
 
 .tf-dealer-list .dealder-button a i {
@@ -2897,12 +2897,12 @@
 }
 
 .widget-dealer-contact .rating .overall-rating-detail-star span b {
-  color: #ff7101;
+  color: #f89520;
   font-weight: 400;
 }
 
 .widget-dealer-contact .rating .overall-rating-detail-star i {
-  color: #ff7101;
+  color: #f89520;
 }
 
 .widget-dealer-contact .button-form-1 {
@@ -2914,7 +2914,7 @@
   display: block;
   padding: 15px 35px;
   border-radius: 14px;
-  background: #ff7101;
+  background: #f89520;
   text-align: center;
   margin-bottom: 11px;
 }
@@ -2964,7 +2964,7 @@
 }
 
 .dealer-sidebar .widget-dealer-map .location-link {
-  border: 1px solid #ff7101;
+  border: 1px solid #f89520;
   padding: 14px 20px;
   border-radius: 14px;
   font-size: 16px;
@@ -2974,11 +2974,11 @@
   width: 100%;
   text-align: center;
   display: block;
-  color: #ff7101;
+  color: #f89520;
 }
 
 .dealer-sidebar .widget-dealer-map .location-link:hover {
-  background: #ff7101;
+  background: #f89520;
   color: #fff;
 }
 
@@ -2992,7 +2992,7 @@
 }
 
 .tf-sale-agent-list .list-agent li .btn-agent {
-  border: 1px solid #ff7101;
+  border: 1px solid #f89520;
   padding: 14px 20px;
   border-radius: 14px;
   font-size: 16px;
@@ -3002,12 +3002,12 @@
   text-align: center;
   display: block;
   min-width: 230px;
-  color: #ff7101;
+  color: #f89520;
   margin-top: 3px;
 }
 
 .tf-sale-agent-list .list-agent li .btn-agent:hover {
-  background: #ff7101;
+  background: #f89520;
   color: #fff;
 }
 
@@ -3024,7 +3024,7 @@
 }
 
 .tf-sale-agent-list .list-agent .author .overall-rating-detail-star i {
-  color: #ff7101;
+  color: #f89520;
   font-size: 13px;
 }
 
@@ -3070,7 +3070,7 @@
 }
 
 .widget-book-apoint a {
-  background: #ff7101;
+  background: #f89520;
   font-size: 16px;
   font-weight: 500;
   line-height: 20.16px;

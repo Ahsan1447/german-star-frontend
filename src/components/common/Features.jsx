@@ -13,7 +13,7 @@ export default function Features() {
                   data-wow-delay="0.2s"
                   data-wow-duration="1000ms"
                 >
-                  Why Choose Auto Decar
+                  Why Choose hubba
                 </h2>
                 <p
                   className="text-color-1 wow fadeInUpSmall"

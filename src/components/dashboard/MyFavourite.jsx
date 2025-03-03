@@ -21,6 +21,7 @@ export default function MyFavourite() {
       }
       const vinString = storedFavorites.join(",");
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/vehicles/favorites?vins=${vinString}`);
+      console.log(response.data);
 
       setFavoriteCars(response.data);
     } catch (err) {

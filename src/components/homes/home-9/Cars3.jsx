@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { carListings2 } from "@/data/cars";
 const priceRanges = [
-  { title: "Auto Decar used cars", isActive: true, range: null },
+  { title: "hubba used cars", isActive: true, range: null },
   {
     title: "$50.000 - $70.000",
     isActive: false,

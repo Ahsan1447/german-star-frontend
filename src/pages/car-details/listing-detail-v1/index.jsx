@@ -8,8 +8,8 @@ import MetaComponent from "@/components/common/MetaComponent";
 import CarfaxReport from "@/components/modals/CarfaxReport";
 const metadata = {
   title:
-    "AutoDecor",
-  description: "AutoDecor",
+    "Hubba",
+  description: "Hubba",
 };
 export default function BlogListingDetailsPage1() {
   let params = useParams();

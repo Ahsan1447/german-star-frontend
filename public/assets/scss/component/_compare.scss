@@ -14,7 +14,7 @@
                 font-weight: 500;
                 line-height: 22.4px;
                 padding: 14px 86px;
-                background: #FF7101;
+                background: #f89520;
                 color: #fff;
                 border-radius: 14px;
                 border: none;
@@ -65,8 +65,8 @@
                         -o-transition: all .3s;
                         transition: all .3s;
                         &:hover {
-                            background: #FF7101;
-                            border-color: #FF7101;
+                            background: #f89520;
+                            border-color: #f89520;
                             & * {
                                 stroke: #fff;
                             }
@@ -138,8 +138,8 @@
             text-align: center;
             &.active,
             &:hover {
-                background: #FF7101;
-                border-color: #FF7101;
+                background: #f89520;
+                border-color: #f89520;
                 color: #fff;
             }
         }

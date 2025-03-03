@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { useEffect, useState } from "react";
 const priceRanges = [
-  { title: "Auto Decar used cars", isActive: true, range: null },
+  { title: "hubba used cars", isActive: true, range: null },
   {
     title: "$50.000 - $80.000",
     isActive: false,

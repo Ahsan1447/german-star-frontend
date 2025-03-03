@@ -406,7 +406,7 @@ export default function Header4() {
                 alt=""
                 width={197}
                 height={48}
-                src="/assets/images/logo/logo@2x.png"
+                src="/assets/images/logo/logo.png"
               />
             </Link>
           </div>

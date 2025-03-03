@@ -1,6 +1,6 @@
 export const footerData = [
   {
-    heading: "About Auto Decar",
+    heading: "About hubba",
     menuItems: [
       { text: "About us", href: "/about-us" },
       { text: "Careers With Us", href: "/about-us" },

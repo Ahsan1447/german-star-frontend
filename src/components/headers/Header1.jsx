@@ -18,19 +18,19 @@ export default function Header1() {
                     <Link to={`/`}>
                       <img
                         className="lazyload img-none"
-                        data-src="/assets/images/logo/logo2.png"
+                        data-src="/assets/images/logo/logo.png"
                         alt=""
                         width={225}
                         height={40}
-                        src="/assets/images/logo/logo2.png"
+                        src="/assets/images/logo/logo.png"
                       />
                       <img
                         className="lazyload img-is-fixed"
-                        data-src="/assets/images/logo/logo@2x.png"
+                        data-src="/assets/images/logo/logo.png"
                         alt=""
                         width={225}
                         height={40}
-                        src="/assets/images/logo/logo@2x.png"
+                        src="/assets/images/logo/logo.png"
                       />
                     </Link>
                   </div>
@@ -185,11 +185,11 @@ export default function Header1() {
             <Link to={`/`}>
               <img
                 className="lazyload"
-                data-src="/assets/images/logo/logo@2x.png"
+                data-src="/assets/images/logo/logo.png"
                 alt=""
                 width={197}
                 height={48}
-                src="/assets/images/logo/logo@2x.png"
+                src="/assets/images/logo/logo.png"
               />
             </Link>
           </div>
