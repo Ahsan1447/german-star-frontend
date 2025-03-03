@@ -6,7 +6,7 @@ export const initialState = {
   year: [2021, 2025],
   body: "Any Body",
   make: "Any Make",
-  model: "Any Model",
+  model: ["Any Model"],
   fuel: "Any Fuel",
   transmission: "Any Transmission",
   location: "Any Location",
@@ -31,8 +31,8 @@ export function reducer(state, action) {
       return { ...state, year: action.payload };
     case "SET_MILES":
       return { ...state, miles: action.payload };
-    case "SET_MODEL":
-      return { ...state, model: action.payload };
+      case "SET_MODEL":
+        return { ...state, model: Array.isArray(action.payload) ? action.payload : [action.payload] };      
     case "SET_BODY":
       return { ...state, body: action.payload };
     case "SET_MAKE":
@@ -71,7 +71,7 @@ export function reducer(state, action) {
         year: [2021, 2025],
         body: "Any Body",
         make: "Any Make",
-        model: "Any Model",
+        model: ["Any Model"],
         fuel: "Any Fuel",
         transmission: "Any Transmission",
         location: "Any Location",

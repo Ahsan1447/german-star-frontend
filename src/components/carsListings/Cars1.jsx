@@ -3,6 +3,7 @@ import Pricing from "../common/Pricing";
 
 import { Link } from "react-router-dom";
 import DropdownSelect from "../common/DropDownSelect";
+import DropDownSelectMultiple from "../common/DropDownSelectMultiple";
 import { featureOptions } from "@/data/filterOptions";
 import { initialState, reducer } from "@/reducer/carFilterReducer";
 import Pagination from "../common/Pagination";
@@ -26,26 +27,26 @@ export default function Cars1() {
 
   const makeModelOptions = {
     "Any Make": ["Any Model"],
-    Dodge: ["Any Model","Charger"],
-    Ford: ["Any Model","Edge", "Expedition", "Bronco","F-150","Transit Wagon","Super Duty F-250 SRW", "Explorer","Super Duty F-450 DRW"],
-    Audi: ["Any Model","Q5", "R8 Spyder", "RS 5 Coupe"],
-    Lexus: ["Any Model","RX", "RX 350"],
-    Jeep: ["Any Model","Grand Cherokee L", "Wagoneer"],
-    Acura: ["Any Model","MDX"],
-    Cadillac: ["Any Model","Escalade"],
-    GMC: ["Any Model","Yukon XL", "Sierra 1500", "Yukon","Sierra 2500HD"],
-    Lincoln: ["Any Model","Navigator", "Navigator L"],
-    Ram: ["Any Model","1500 Classic", "1500"],
-    Chevrolet: ["Any Model","Suburban", "Silverado 1500", "Silverado 2500HD"],
-    INFINITI: ["Any Model","Q50"],
-    Porsche: ["Any Model","Cayenne", "Panamera", "Macan"],
-    Jaguar: ["Any Model","F-PACE"],
-    "Mercedes-Benz": ["Any Model","G-Class","GLC"],
-    "Land Rover": [ "Any Model","Defender"],
-    Nissan: ["Any Model","GT-R"],
-    BMW: ["Any Model","3 Series", "4 Series", "5 Series", "6 Series", "X5", "X6", "X7", "M2","M3","M4","M5"],
-    Volkswagen: ["Any Model","Golf R"],
-    Toyota: ["Any Model","GR Corolla", "Tundra"]
+    Dodge: ["Any Model", "Charger"],
+    Ford: ["Any Model", "Edge", "Expedition", "Bronco", "F-150", "Transit Wagon", "Super Duty F-250 SRW", "Explorer", "Super Duty F-450 DRW"],
+    Audi: ["Any Model", "Q5", "R8 Spyder", "RS 5 Coupe"],
+    Lexus: ["Any Model", "RX", "RX 350"],
+    Jeep: ["Any Model", "Grand Cherokee L", "Wagoneer"],
+    Acura: ["Any Model", "MDX"],
+    Cadillac: ["Any Model", "Escalade"],
+    GMC: ["Any Model", "Yukon XL", "Sierra 1500", "Yukon", "Sierra 2500HD"],
+    Lincoln: ["Any Model", "Navigator", "Navigator L"],
+    Ram: ["Any Model", "1500 Classic", "1500"],
+    Chevrolet: ["Any Model", "Suburban", "Silverado 1500", "Silverado 2500HD"],
+    INFINITI: ["Any Model", "Q50"],
+    Porsche: ["Any Model", "Cayenne", "Panamera", "Macan"],
+    Jaguar: ["Any Model", "F-PACE"],
+    "Mercedes-Benz": ["Any Model", "G-Class", "GLC"],
+    "Land Rover": ["Any Model", "Defender"],
+    Nissan: ["Any Model", "GT-R"],
+    BMW: ["Any Model", "3 Series", "4 Series", "5 Series", "6 Series", "X5", "X6", "X7", "M2", "M3", "M4", "M5"],
+    Volkswagen: ["Any Model", "Golf R"],
+    Toyota: ["Any Model", "GR Corolla", "Tundra"]
   };
 
   const allProps = {
@@ -101,7 +102,7 @@ export default function Cars1() {
 
   useEffect(() => {
     fetchCars();
-  }, [currentPage, itemPerPage,filters]); // Fetches data when pagination changes
+  }, [currentPage, itemPerPage, filters]); // Fetches data when pagination changes
 
   const applyFilters = () => {
     setFilters({
@@ -156,7 +157,7 @@ export default function Cars1() {
                             selectedValue={make}
                             onChange={(selectedMake) => {
                               allProps.setMake(selectedMake);
-                              allProps.setModel("Any Model"); // Reset model when make changes
+                              allProps.setModel(["Any Model"]);
                             }}
                             options={Object.keys(makeModelOptions)}
                             defaultOption="Any Make"
@@ -166,6 +167,18 @@ export default function Cars1() {
 
                       <div className="form-group">
                         <div className="group-select">
+                          <DropDownSelectMultiple
+                            defaultSelected={allProps.model} // Sync with global state
+                            onChange={(selectedModels) => allProps.setModel(selectedModels)}
+                            options={makeModelOptions[allProps.make] || []}
+                          />
+
+
+                        </div>
+                      </div>
+
+                      {/* <div className="form-group">
+                        <div className="group-select">
                           <DropdownSelect
                             selectedValue={model}
                             onChange={allProps.setModel}
@@ -173,7 +186,7 @@ export default function Cars1() {
                             defaultOption="Any Model"
                           />
                         </div>
-                      </div>
+                      </div> */}
 
                       <div className="form-group">
                         <div className="group-select">
@@ -201,21 +214,21 @@ export default function Cars1() {
                             selectedValue={body}
                             onChange={allProps.setBody}
                             options={[
-                            "Any Body",
-                             "SUV",
-                             "Sport Utility",
-                             "Extended Cab Pickup - Standard Bed",
-                             "Crew Cab Standard Bed",
-                             "Crew Cab Pickup - Long Bed",
-                             "Convertible",
-                             "Sedan",
-                             "4dr Car",
-                             "Crew Cab Pickup - Standard Bed",
-                             "Crew Cab Short Box",
-                             "Full-size Passenger Van",
-                             "Coupe",
-                             "2dr Car",
-                             "Crew Cab Pickup - Short Bed",
+                              "Any Body",
+                              "SUV",
+                              "Sport Utility",
+                              "Extended Cab Pickup - Standard Bed",
+                              "Crew Cab Standard Bed",
+                              "Crew Cab Pickup - Long Bed",
+                              "Convertible",
+                              "Sedan",
+                              "4dr Car",
+                              "Crew Cab Pickup - Standard Bed",
+                              "Crew Cab Short Box",
+                              "Full-size Passenger Van",
+                              "Coupe",
+                              "2dr Car",
+                              "Crew Cab Pickup - Short Bed",
                             ]}
                             defaultOption={"Any Body"}
                           />
@@ -227,16 +240,16 @@ export default function Cars1() {
                           <DropdownSelect
                             selectedValue={cylinder}
                             onChange={allProps.setCylinder}
-                            options={["Any Cylinder","3","4","6","8","10"]}
+                            options={["Any Cylinder", "3", "4", "6", "8", "10"]}
                           />
                         </div>
-                      </div> 
+                      </div>
                       <div className="form-group">
                         <div className="group-select">
                           <DropdownSelect
                             selectedValue={drivetrain}
                             onChange={allProps.setDrivetrain}
-                            options={["Any Drivetrain","FWD", "RWD", "AWD"]}
+                            options={["Any Drivetrain", "FWD", "RWD", "AWD"]}
                           />
                         </div>
                       </div>
@@ -254,7 +267,7 @@ export default function Cars1() {
                           <DropdownSelect
                             selectedValue={transmission}
                             onChange={allProps.setTransmission}
-                            options={["Any Transmission","Automatic", "Manual"]}
+                            options={["Any Transmission", "Automatic", "Manual"]}
                           />
                         </div>
                       </div>
@@ -301,9 +314,8 @@ export default function Cars1() {
                 <div className="row">
                   <div className="col-lg-12 listing-list-car-wrap">
                     <div
-                      className={`list-car-list-1 ${
-                        isGrid ? "list-car-grid-1" : ""
-                      } `}
+                      className={`list-car-list-1 ${isGrid ? "list-car-grid-1" : ""
+                        } `}
                     >
                       {cars
                         .map((car, i) => (
@@ -315,7 +327,7 @@ export default function Cars1() {
                                 </ul>
                                 <div className="year flag-tag">{car.year}</div>
                               </div> */}
-                              
+
                               <div className="img-style">
                                 <img
                                   className="lazyload"
