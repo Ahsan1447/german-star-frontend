@@ -128,8 +128,7 @@ export default function Cars1() {
           <div className="row">
             <div className="col-lg-12">
               <div className="heading-section">
-                {/* <h2>10,000+ Get The Best Deals On Used Cars</h2> */}
-                <p className="mt-20">
+                <p style={{marginTop:"92px"}}>
                   Explore our selection of high-quality, pre-owned vehicles. Our
                   inventory includes top brands like Toyota, Mercedes, Honda,
                   and more. Find the perfect used car for your needs.
@@ -319,66 +318,70 @@ export default function Cars1() {
                     >
                       {cars
                         .map((car, i) => (
-                          <div key={i} className="box-car-list style-2 hv-one">
-                            <div className="image-group relative">
-                              {/* <div className="top flex-two">
-                                <ul className="d-flex gap-8">
-                                  <li className="flag-tag success">Featured</li>
-                                </ul>
-                                <div className="year flag-tag">{car.year}</div>
-                              </div> */}
+                          <Link key={i} to={`/detail/${car.vin}`}>
+                            <div className="box-car-list style-2 hv-one">
+                              <div className="image-group relative">
 
-                              <div className="img-style">
-                                <img
-                                  className="lazyload"
-                                  alt="image"
-                                  src={`${import.meta.env.VITE_BACKEND_BASE_URL}/${car.thumbnail}`}
-                                  width={450}
-                                  height={338}
-                                />
-                              </div>
-                            </div>
-                            <div className="content">
-                              <div className="inner1">
-                                <div className="text-address">
-                                  <p className="text-color-3 font">
-                                    {car.make}
-                                  </p>
+                                <div className="img-style" style={{
+                                  backgroundColor: "#f3f3f3", // Light grey filler background
+                                  height: "338px",
+                                  overflow: "hidden" // Ensures no stretching
+                                }}>
+                                  <img
+                                    className="lazyload"
+                                    alt="image"
+                                    style={{
+                                      objectFit: "contain"
+                                    }}
+                                    src={`${import.meta.env.VITE_BACKEND_BASE_URL}/${car.thumbnail}`}
+                                    width={450}
+                                    height={338}
+                                  />
                                 </div>
-                                <h5 className="link-style-1">
-                                  <Link to={`/detail/${car.vin}`}>
-                                    {car.model}
-                                  </Link>
-                                </h5>
-                                <div className="icon-box flex flex-wrap">
-                                  <div className="icons flex-three">
-                                    <i className="icon-autodeal-km1" />
-                                    <span>{car.miles} miles</span>
+                              </div>
+                              <div className="content">
+                                <div className="inner1">
+                                  <div className="text-address">
+                                    <p className="text-color-3 font">
+                                      {car.year}
+                                    </p>
                                   </div>
-                                  <div className="icons flex-three">
-                                    <i className="icon-autodeal-color" />
-                                    <span>{car.color}</span>
+                                  <div className="text-address">
+                                    <p style={{ fontSize: "20px" }} className="text-color-3 font">
+                                      {car.make}
+                                    </p>
                                   </div>
-                                  <div className="icons flex-three">
+                                  <h5 className="link-style-1">
+                                    <Link to={`/detail/${car.vin}`}>
+                                      {car.model}
+                                    </Link>
+                                  </h5>
+                                  <div className="icon-box flex flex-wrap">
+                                    <div className="icons flex-three">
+                                      <i className="icon-autodeal-km1" />
+                                      <span>{car.miles} miles</span>
+                                    </div>
+                                    <div className="icons flex-three">
+                                      <i className="icon-autodeal-color" />
+                                      <span>{car.color}</span>
+                                    </div>
+                                  </div>
+                                  <div className="icons">
                                     <i className="fa fa-address-book" />
                                     <span>{car.location}</span>
                                   </div>
-                                  {/* {isGrid && 
-                                  <div className="icons flex-three">
-                                    <Link to={`/detail/${car.vin}`}>View Details</Link>
-                                  </div>
-                                  } */}
+                                  <Link
+                                    to={`/detail/${car.vin}`}
+                                    className="view-car"
+                                  >
+                                    View details
+                                    <i className="icon-autodeal-btn-right" />
+                                  </Link>
                                 </div>
-                                <Link
-                                  to={`/detail/${car.vin}`}
-                                  className="view-car"
-                                >
-                                  View details
-                                  <i className="icon-autodeal-btn-right" />
-                                </Link>
                               </div>
                             </div>
-                          </div>
+
+                          </Link>
                         ))}
                     </div>
                     <div className="themesflat-pagination clearfix mt-40">

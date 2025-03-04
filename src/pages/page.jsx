@@ -26,7 +26,7 @@ export default function HomePage1() {
       <div className="header-fixed">
         <Header1 />
       </div>
-      <Hero />
+      {/* <Hero /> */}
       {/* <Filter /> */}
       <Cars1 />
       {/* <Categories /> */}

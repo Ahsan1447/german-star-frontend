@@ -62,6 +62,9 @@ export default function Slider1({ carItem }) {
                 className="lazyload"
                 alt="image"
                 src={elm}
+                style={{
+                  objectFit: "contain"
+                }}
                 width={1245}
                 height={701}
               />
