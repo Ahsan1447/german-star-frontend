@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CarDetails1 from "@/components/carDetails/CarDetails1";
 import Footer1 from "@/components/footers/Footer1";
-import Header2 from "@/components/headers/Header2";
+import Header1 from "@/components/headers/Header1";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import MetaComponent from "@/components/common/MetaComponent";
@@ -40,7 +40,7 @@ export default function BlogListingDetailsPage1() {
     <>
       <MetaComponent meta={metadata} />
       <div className="header-fixed">
-        <Header2 />
+        <Header1 />
       </div>
       <section className="flat-title mb-40">
         <div className="container2">
