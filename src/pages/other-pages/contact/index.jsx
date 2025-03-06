@@ -1,6 +1,6 @@
 import Brands from "@/components/common/Brands";
 import Footer1 from "@/components/footers/Footer1";
-import Header2 from "@/components/headers/Header2";
+import Header1 from "@/components/headers/Header1";
 import Contact from "@/components/otherPages/Contact";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -14,9 +14,9 @@ export default function ContactPage() {
     <>
       <MetaComponent meta={metadata} />
       <div className="header-fixed">
-        <Header2 />
+        <Header1 />
       </div>
-      <section className="flat-title mb-40">
+      {/* <section className="flat-title mb-40">
         <div className="container2">
           <div className="row">
             <div className="col-lg-12">
@@ -31,9 +31,9 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <Contact />
-      <Brands />
+      {/* <Brands /> */}
       <Footer1 />
     </>
   );

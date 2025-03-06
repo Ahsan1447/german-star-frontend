@@ -1,9 +1,14 @@
 import React from "react";
 import Nav from "./Nav";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import MobileNav from "./MobileNav";
 export default function Header1() {
+  const { pathname } = useLocation();
+  const current = {
+    color: "#f89520",
+  };
+
   return (
     <header className="main-header style2">
       {/* Header Lower */}
@@ -12,7 +17,7 @@ export default function Header1() {
           <div className="row">
             <div className="col-lg-12">
               <div className="inner-container flex justify-space align-center">
-                
+
                 <div className="logo-box flex">
                   <div className="logo">
                     <Link to={`/`}>
@@ -83,13 +88,21 @@ export default function Header1() {
                       </form>
                     </div>
                   </div> */}
-                  <a
+                  <a style={pathname.split("/")[1] === "my-favorite" ? current : {}}
                     href="/my-favorite"
                     className="header-favorite flex items-center justify-center"
                   >
                     <i className="icon-autodeal-favorite fs-18" />
                   </a>
                   <div className="register">
+                    <ul className="flex align-center">
+
+                      <li style={pathname.split("/")[1] === "contact" ? current : {}}>
+                        <Link to={`/contact`}>Contact Us</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  {/* <div className="register">
                     <ul className="flex align-center">
                       <li>
                         <i className="icon-autodeal-user fs-20" />
@@ -116,7 +129,7 @@ export default function Header1() {
                         </a>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                   {/* <div className="flat-bt-top">
                     <Link className="sc-button" to={`/add-listing`}>
                       <svg
@@ -246,7 +259,7 @@ export default function Header1() {
           </div>
         </nav>
       </div> */}
-    
+
     </header>
   );
 }

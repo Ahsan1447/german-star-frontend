@@ -36,7 +36,7 @@ export default function Contact() {
   };
   return (
     <>
-      <section className="flat-property">
+      {/* <section className="flat-property">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -63,8 +63,8 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="tf-section-map">
+      </section> */}
+      {/* <section className="tf-section-map">
         <div className="container-fluid">
           <div className="map">
             <iframe
@@ -75,12 +75,12 @@ export default function Contact() {
             ></iframe>
           </div>
         </div>
-      </section>
-      <section className="tf-section-contact">
-        <div className="container">
+      </section> */}
+      <section className="tf-section-contact" >
+        <div className="container" style={{ marginTop: "92px" }}>
           <div className="row">
-            <div className="col-md-8 contact-left">
-              <div className="heading-section mb-30">
+            <div className="col-md-8 contact-left" >
+              <div className="heading-section mb-30" >
                 <h2>Drop Us a Line</h2>
                 <p className="mt-12">
                   Feel free to connect with us through our online channels for
@@ -179,7 +179,7 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 contact-right">
+            <div className="col-md-4 contact-right" >
               <div className="contact-info box-sd">
                 <h2 className="mb-30">Contact Us</h2>
                 <div className="wrap-info">
@@ -200,7 +200,7 @@ export default function Contact() {
                     <p>Monay - Friday: 08:00 - 20:00</p>
                     <p>Saturday - Sunday: 10:00 - 18:00</p>
                   </div>
-                  <div className="box-info">
+                  {/* <div className="box-info">
                     <h5>Follow Us:</h5>
                     <div className="icon-social style2">
                       <a href="#">
@@ -216,7 +216,7 @@ export default function Contact() {
                         <i className="icon-autodeal-instagram" />
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

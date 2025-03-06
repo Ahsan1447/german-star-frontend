@@ -400,7 +400,7 @@ export default function Footer1() {
                 <div className="title-bottom center">
                   © 2025 hubba. All rights reserved
                 </div>
-                <div className="icon-social box-3 text-color-1">
+                {/* <div className="icon-social box-3 text-color-1">
                   <a href="#">
                     <i className="icon-autodeal-facebook" />
                   </a>
@@ -416,7 +416,7 @@ export default function Footer1() {
                   <a href="#">
                     <i className="icon-autodeal-youtube" />
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -174,8 +174,8 @@ function App() {
               <Route path="my-review" element={<MyReviewPage />} />
               <Route path="my-profile" element={<MyProfilePage />} />
               <Route path="change-password" element={<ChangePassPage />} />
-              <Route path="add-listing" element={<AddListingPage />} />
-              <Route path="contact" element={<ContactPage />} /> */}
+              <Route path="add-listing" element={<AddListingPage />} /> */}
+              <Route path="contact" element={<ContactPage />} />
             </Route>
           </Routes>
         </div>

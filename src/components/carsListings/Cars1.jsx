@@ -126,7 +126,7 @@ export default function Cars1() {
       <section className="listing-grid tf-section3">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12">
+            {/* <div className="col-lg-12">
               <div className="heading-section">
                 <p style={{marginTop:"92px"}}>
                   Explore our selection of high-quality, pre-owned vehicles. Our
@@ -134,8 +134,8 @@ export default function Cars1() {
                   and more. Find the perfect used car for your needs.
                 </p>
               </div>
-            </div>
-            <div className="col-lg-12 flex gap-30 text-start">
+            </div> */}
+            <div className="col-lg-12 flex gap-30 text-start" style={{ marginTop: "92px" }}>
               <div className="sidebar-right-listing style-2">
                 <div className="sidebar-title flex-two flex-wrap">
                   <h4>Filters and Sort</h4>
@@ -312,6 +312,17 @@ export default function Cars1() {
               <div className="sidebar-left-listing">
                 <div className="row">
                   <div className="col-lg-12 listing-list-car-wrap">
+                    {/* <div className="filter-mobie">
+                      <a
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight"
+                        className="filter"
+                      >
+                        Filter
+                        <i className="icon-autodeal-filter" />
+                      </a>
+                    </div> */}
                     <div
                       className={`list-car-list-1 ${isGrid ? "list-car-grid-1" : ""
                         } `}
@@ -400,7 +411,7 @@ export default function Cars1() {
           </div>
         </div>
       </section>
-      {/* <FilterSidebar allProps={allProps} clearFilter={clearFilter} /> */}
+      <FilterSidebar allProps={allProps} clearFilter={clearFilter} />
     </>
   );
 }

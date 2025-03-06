@@ -72,21 +72,37 @@ export default function MyFavourite() {
                       {favoriteCars.map((car, i) => (
                         <div key={i} className="box-car-list hv-one">
                           <div className="image-group relative">
-                            <div className="img-style">
+                            <div className="img-style" style={{
+                              backgroundColor: "#f3f3f3", // Light grey filler background
+                              height: "338px",
+                              overflow: "hidden" // Ensures no stretching
+                            }}>
                               <img
                                 className="lazyload"
                                 alt="image"
+                                style={{
+                                  objectFit: "contain"
+                                }}
                                 src={`${import.meta.env.VITE_BACKEND_BASE_URL}/${car.thumbnail}`}
-                      
+                                width={450}
+                                height={338}
+
                               />
                             </div>
                           </div>
                           <div className="content">
                             <div className="text-address">
-                              <p className="text-color-3 font">{car.model}</p>
+                              <p className="text-color-3 font">{car.year}</p>
+                            </div>
+                            <div className="text-address">
+                              <p style={{ fontSize: "20px" }} className="text-color-3 font">
+                                {car.make}
+                              </p>
                             </div>
                             <h5 className="link-style-1">
-                              <Link to={`/detail/${car.vin}`}>{car.make}</Link>
+                              <Link to={`/detail/${car.vin}`}>
+                                {car.model}
+                              </Link>
                             </h5>
                             <div className="icon-box flex flex-wrap">
                               <div className="icons flex-three">
@@ -94,21 +110,15 @@ export default function MyFavourite() {
                                 <span>{car.miles} Miles</span>
                               </div>
                               <div className="icons flex-three">
-                                <i className="icon-autodeal-diesel" />
-                                <span>{car.trim}</span>
-                              </div>
-                              <div className="icons flex-three">
                                 <i className="icon-autodeal-color" />
                                 <span>{car.color}</span>
                               </div>
-                            </div>
-                            <div className="money fs-20 fw-5 lh-25 text-color-3">
-                              {car.make} ({car.model}) - Year {car.year}
+                              <div className="icons">
+                                <i className="fa fa-address-book" />
+                                <span>{car.location}</span>
+                              </div>
                             </div>
                             <div className="days-box flex justify-space align-center">
-                              <Link to={`/detail/${car.vin}`} className="view-car">
-                                View car
-                              </Link>
                               <button onClick={() => removeFromFavorites(car.vin)} className="view-car">
                                 Remove
                               </button>

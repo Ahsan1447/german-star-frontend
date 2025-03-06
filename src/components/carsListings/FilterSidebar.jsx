@@ -157,21 +157,21 @@ export default function FilterSidebar({ allProps, clearFilter }) {
                   <div className="caption flex-two">
                     <div>
                       <span className="fw-6">
-                        KM: {allProps.km[0]} km - {allProps.km[1]} km
+                        Miles: {allProps.miles[0]} miles - {allProps.miles[1]} miles
                       </span>
                     </div>
                   </div>
                   <Pricing
                     MIN={45000}
                     MAX={115000}
-                    priceRange={allProps.km}
-                    setPriceRange={allProps.setKM}
+                    priceRange={allProps.miles}
+                    setPriceRange={allProps.setMiles}
                   />
                 </div>
                 {/* /.widget_price */}
               </div>
 
-              <div className="features-wrap">
+              {/* <div className="features-wrap">
                 <h4>Featured</h4>
                 <div className="form-group">
                   <div className="tf-amenities bg-white">
@@ -189,7 +189,7 @@ export default function FilterSidebar({ allProps, clearFilter }) {
                     ))}
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </form>
         </div>
